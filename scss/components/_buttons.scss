@@ -1,0 +1,69 @@
+//Links
+
+//Back to top
+.cd-top {
+  background: $primary-color;
+  border-radius: 50%;
+  height: 4vw;
+  width: 4vw;
+  max-width: 45px;
+  max-height: 45px;
+
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s 0s, visibility 0s .3s;
+
+  z-index: 9999;
+  position: fixed;
+  bottom: 5%;
+  right: 2%;
+
+  @extend .db;
+
+  img {
+    width: 50%;
+
+    @extend .centering;
+    @extend .backspace;
+  }
+}
+.cd-top.cd-is-visible,
+.cd-top.cd-fade-out,
+.no-touch .cd-top:hover {
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  opacity: .5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+.no-touch .cd-top:hover {
+  background-color: $secondary-color;
+  opacity: 1;
+}
+
+//Responsive - Links
+@media screen and (min-width: 0) and (max-width: 767px) {
+
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+}
+
+//Responsive - Back to top
+@media screen and (min-width: 0) and (max-width: 767px) {
+  .cd-top {
+    width: 8vw;
+    height: 8vw;
+
+    bottom: 4%;
+    right: 5%;
+  }
+}

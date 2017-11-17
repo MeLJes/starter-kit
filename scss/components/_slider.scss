@@ -1,0 +1,38 @@
+//Default
+.swiper-button-prev {
+  background-image: url('../icons/arrow-l.svg');
+}
+.swiper-button-next {
+  background-image: url('../icons/arrow-r.svg');
+}
+.swiper-button-prev,
+.swiper-button-next {
+  background-size: contain;
+  width: 5vw;
+  height: 10vw;
+
+  transform: scale(0.9);
+  transition: all $default-transition;
+
+  top: 25%;
+
+  &:hover {
+     transform: scale(1);
+  }
+}
+.swiper-pagination {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.swiper-pagination-bullet {
+  background: $primary-color;
+  width: 2vw;
+  height: 2vw;
+  margin: 0 1vw;
+  opacity: 0.5;
+  transition: all $default-transition;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}

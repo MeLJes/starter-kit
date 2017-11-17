@@ -1,0 +1,52 @@
+//Fonts
+
+//Font weight
+$light: 300;
+$regular: normal;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+$black: 900;
+
+//Font size
+$f8px: 0.55em;
+$f10px: 0.625em;
+$f12px: 0.750em;
+$f14px: 0.875em;
+$f16px: 1em;
+$f20px: 1.250em;
+$f35px: 2.188em;
+$f40px: 2.500em;
+$f50px: 3.125em;
+$f70px: 4.375em;
+$f90px: 5.625em;
+$f115px: 7.188em;
+$f120px: 7.500em;
+$f180px: 11.25em;
+
+//Colors
+$default-color: #2c2c2c;
+$primary-color: #a1b8c6;
+$secondary-color: #0a253e;
+$white: #fff;
+$gray: #dedede;
+$error: #e41c1c;
+
+//Colors - RGB
+$white-rgb: 255,255,255;
+
+//Transition
+$default-transition: 0.2s ease-in-out;
+
+//Responsive
+$screen-zero: 0;
+$screen-xs-max: 767px;
+// --- Tablets
+$screen-sm-min: 768px;
+$screen-sm-max: 991px;
+// --- Laptops
+$screen-md-min: 992px;
+$screen-md-max: 1199px;
+// --- Desktops
+$screen-lg-min: 1200px;

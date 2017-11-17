@@ -1,1 +1,1 @@
-SCSS Starter KIT
+# SCSS-Starter-Kit
