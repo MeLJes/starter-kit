@@ -1,0 +1,52 @@
+//Default
+html.remodal-is-locked {
+  overflow: hidden;
+}
+.remodal-overlay {
+  background: rgba($white, 0.9);
+}
+.remodal-wrapper {
+  padding: 0;
+}
+.remodal {
+  background: transparent;
+  color: $default-color;
+  width: 80%;
+  max-width: none;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+
+  @extend .backspace;
+}
+.remodal-close {
+  width: 30px;
+  height: 30px;
+  transition: opacity $default-transition;
+
+  top: 25px;
+  right: 0;
+  left: auto;
+
+  &:hover {
+    opacity: 0.5;
+  }
+  &:before {
+    display: none;
+  }
+}
+
+//Responsive
+@media screen and (min-width: #{$screen-zero} ) and (max-width: #{$screen-xs-max} ) {
+  .remodal {
+    width: 100%;
+
+    .remodal-close {
+      width: 40px;
+      height: 40px;
+
+      top: 25px;
+      right: 25px;
+    }
+  }
+}

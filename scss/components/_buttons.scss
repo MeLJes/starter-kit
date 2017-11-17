@@ -1,0 +1,41 @@
+//Links
+
+//Back to top
+.cd-top {
+  background: $primary-color;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s 0s, visibility 0s .3s;
+
+  z-index: 9999;
+  position: fixed;
+  bottom: 5%;
+  right: 2%;
+
+  @extend .db;
+}
+.cd-top.cd-is-visible,
+.cd-top.cd-fade-out,
+.no-touch .cd-top:hover {
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  opacity: .5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+.no-touch .cd-top:hover {
+  background-color: $secondary-color;
+  opacity: 1;
+}
