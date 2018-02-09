@@ -39,19 +39,23 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 // --- User select
 .us-none { user-select: none; }
 .pe-none { pointer-events: none; }
 .pe-auto { pointer-events: auto; }
+
 // --- Float
 .cb { clear: both; }
 .fl { float: left; }
 .fr { float: right; }
+
 // --- Text
 .up { text-transform: uppercase; }
 .tl { text-align: left; }
 .tc { text-align: center; }
 .tr { text-align: right; }
+
 // --- Centering
 .centering {
   transform: translate(-50%, -50%);
@@ -73,18 +77,21 @@
 .dn { display: none !important; }
 .db { display: block; }
 .dib { display: inline-block;  vertical-align: top; }
+
 // --- Flex
 .df { display: flex; }
 .df-c { display: flex; flex-direction: column; }
 .dif { display: inline-flex; }
 .dif-c { display: inline-flex; flex-direction: column; }
 .df-wrap { flex-wrap: wrap; }
+
 // ------ Justify content
 .jc-center { justify-content: center; }
 .jc-space-around { justify-content: space-around; }
 .jc-space-between { justify-content: space-between; }
 .jc-flex-start { justify-content: flex-start; }
 .jc-flex-end { justify-content: flex-end; }
+
 // ------ Align items
 .ai-baseline { align-items: baseline; }
 .ai-center { align-items: center; }
