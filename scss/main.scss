@@ -1,35 +1,37 @@
-//Helpers
+@charset "UTF-8"; 
+
+// Helpers
 @import "helpers/variables";
 @import "helpers/mixins";
 @import "helpers/functions";
 
-//Base styles
+// Base styles
 @import "normalize";
 @import "base/class";
 @import "base/typography";
 @import "base/base";
 
-//Keyframes
+// Keyframes
 @import "keyframes/keyframes";
 
-//Components
+// Components
 @import "components/inputs";
 @import "components/buttons";
 @import "components/dropdown";
 @import "components/modal";
 @import "components/slider";
 
-//Layout
+// Layout
 @import "layout/header";
 @import "layout/footer";
 
-//---------- Pages
+// ---------- Pages
 
 //Home page
 @import "sections/home/section";
 
-//---------- Media
+// ---------- Media
 
 @import "sections/media";
 
-//---------- Custom styles
+// ---------- Custom styles
