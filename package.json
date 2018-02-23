@@ -13,5 +13,9 @@
     "gulp-sourcemaps": "^2.6.0",
     "gulp-watch": "^4.3.11"
   },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
   "dependencies": {}
 }
