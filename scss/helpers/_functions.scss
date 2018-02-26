@@ -1,19 +1,15 @@
-// PX to EM 
-@function calc-em($pixels, $context: $default-size) {
+@function px-to-em($pixels, $context: $default-size) {
   @return #{$pixels / $context}em;
 }
 
-// PX to REM
-@function calc-rem($pixels, $context: $default-size) {
+@function px-to-rem($pixels, $context: $default-size) {
   @return #{$pixels / $context}rem;
 }
 
-// Calculate width
 @function calc-width($number) {
     @return 100% / $number; 
 }
 
-// Pick color from palette
 @function color($key) {
   @if map-has-key($colors, $key) {
     @return map-get($colors, $key);
@@ -23,7 +19,6 @@
   @return null;
 }
 
-// Pick font weight
 @function weight($weight) {
   @if map-has-key($weights, $weight) {
     @return map-get($weights, $weight);
@@ -33,7 +28,6 @@
   @return null;
 }
 
-// Z-index
 @function z($key) {
   @if map-has-key($z-layers, $key) {
     @return map-get($z-layers, $key);

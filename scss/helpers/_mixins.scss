@@ -10,45 +10,45 @@
 }
 
 // Width & Height are equal
-@mixin size($width, $height: $width) {
-  width: $width;
-  height: $height;
+@mixin size($width, $unit: px, $height: $width) {
+  width: #{$width}$unit;
+  height: #{$height}$unit;
 }
 
 // Preset max width & height
-@mixin size-max($width, $max-width: auto, $height: $width, $max-height: $max-width) {
-  width: $width;
-  max-width: $max-width;
-  height: $height;
-  max-height: $max-height;
+@mixin size-max($width, $max-width: auto, $unit: px, $height: $width, $max-height: $max-width) {
+  width: #{$width}$unit;
+  max-width: #{$max-width}$unit;
+  height: #{$height}$unit;
+  max-height: #{$max-height}$unit;
 }
 
 // Set 16:9 ratio (Sixteen to Nine) - Landscape
-@mixin ratio-sn-l($width, $unit) {
+@mixin ratio-sn-land($width, $unit: px) {
   width: #{$width}$unit;
   height: #{($width / 1.77777777778)}$unit;
 }
 
 // Set 16:9 ratio (Sixteen to Nine) - Portrait
-@mixin ratio-sn-p($width, $unit) {
+@mixin ratio-sn-port($width, $unit: px) {
   width: #{$width}$unit;
   height: #{($width * 1.77777777778)}$unit;
 }
 
 // Set 99:70 ratio (A4) - Landscape
-@mixin ratio-a4-l($width, $unit) {
+@mixin ratio-a4-land($width, $unit: px) {
   width: #{$width}$unit;
   height: #{($width / 1.41428571429)}$unit;
 }
 
 // Set 99:70 ratio (A4) - Portrait
-@mixin ratio-a4-p($width) {
+@mixin ratio-a4-port($width, $unit: px) {
   width: #{$width}$unit;
   height: #{($width * 1.41428571429)}$unit;
 }
 
 // Clear floating
-@mixin clearfix {
+@mixin clear-fix {
   &:after {
     content: '';
     display: table;
