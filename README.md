@@ -25,12 +25,12 @@ To use mixin, you need type in style block **```@include mixin-name();```**. Mix
 
 :warning: If you wanna change some properties that starting from second one (for example duration from **`0.2`** to **`0.4`**), you need specify other arguments that came before current argument. 
 
-1. **Transitions ```scss @include tr();```**
+**1. Transitions ```@include tr();```**
   - `$property` - default `all`
   - `$duration` - default: `0.2`
   - `$timing-function` - default: `ease-in-out`
 
-2. **Font properties ```scss @include font-prop();```**
+**2. Font properties ```@include font-prop();```**
   - `$weight` - required*
   - `$size` - default: `16` (px converted to em)
 
@@ -47,14 +47,14 @@ $weights: (
     black: 900
 );
 ```
-3. **Equal block size ```scss @include size();``` or ```scss @include size-max();```**
+**3. Equal block size ```scss @include size();``` or ```scss @include size-max();```**
   - `$width` - required*
   - `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
   - `$max-width` - default: `auto` (this argument available only for `size-max` mixin)
    
 *You need specify one value witch will be set to both sides (width and height). 
 
-4. **16:9 ratio block size ```scss @include ratio-sn-land();``` or ```scss @include ratio-sn-port();```**
+**4. 16:9 ratio block size ```scss @include ratio-sn-land();``` or ```scss @include ratio-sn-port();```**
   - `$width` - required*
   - `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
 
@@ -63,7 +63,7 @@ $weights: (
   `ratio-sn-land` mixin give you landscape block.
   `ratio-sn-port` make portrait block.
 
-5. **99:70 ratio (A4) block size ```scss @include ratio-a4-land();``` or ```scss @include ratio-a4-port();```**
+**5. 99:70 ratio (A4) block size ```scss @include ratio-a4-land();``` or ```scss @include ratio-a4-port();```**
   - `$width` - required*
   - `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
 
@@ -72,24 +72,24 @@ $weights: (
   `ratio-a4-land` mixin give you landscape block.
   `ratio-a4-port` make portrait block.
 
-6. **Clear float elements ```scss @include clear-fix();```**
+**6. Clear float elements ```scss @include clear-fix();```**
 Including this mixin to any selector will add pseudo-element `::after` with css-property `clear: both` (and couple others).
 
 :warning: Note, that if parent selector has `display: flex`, pseudo-element `::after` will take his physic place. 
 
-### SCSS functions
+## SCSS functions
 To use mixin, you need type in style block **`css-property: function-name();`**. Usually function have one `required` argument, witch must be specify when you call this function. Some functions have `optional` arguments, witch take default value if they not specify in function call (arguments are coma separated).
 
-1. **Convert PX to EM or REM ```scss css-property: px-to-em();``` or ```scss css-property: px-to-rem();```**
+**1. Convert PX to EM or REM ```scss css-property: px-to-em();``` or ```scss css-property: px-to-rem();```**
   - `$pixels` - required*
   - `$context` - default `16` (can be change to set different base point value)
 
 *You need specify number value (without unit) in brackets. In output you will get final value with `EM` or `REM` unit.
 
-2. **Calculate block width (part from 100%) ```scss css-property: calc-width();```**
+**2. Calculate block width (part from 100%) ```scss css-property: calc-width();```**
 Set whole number as argument; in output you will get `100% / $number`
 
-3. **Pick color from palette ```scss css-property: color();```**
+**3. Pick color from palette ```scss css-property: color();```**
 Set color name as argument to get specific color. 
 
 ```scss   
@@ -111,7 +111,7 @@ $colors: (
 );
 ```
 
-4. **Set `font-weight` property ```scss css-property: weight();```**
+**4. Set `font-weight` property ```scss css-property: weight();```**
 Set weight name as argument to set `font-weight`. 
     
 ```scss   
@@ -126,7 +126,7 @@ $weights: (
 );
 ```
 
-5. **Set `z-index` property ```scss css-property: z();```**
+**5. Set `z-index` property ```scss css-property: z();```**
 Set `z-index` name from the list above as argument. 
     
 ```scss   
