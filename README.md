@@ -19,7 +19,6 @@
 
 ---
 
-
 ### SASS mixin
 To use mixin, you need type in style block `@include mixin-name();`. Mixin may contain arguments (coma separated). Some of them contain default value (if not specify when mixin call, argument will take default value), other `required` and should be specify when mixin called.
 
