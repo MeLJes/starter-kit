@@ -1,4 +1,4 @@
-![ ](https://avatars3.githubusercontent.com/u/9341289?v=3&s=300)
+![ ](/MeLJes/starter-kit/blob/master/preview.png)
 
 
 # ERWIN Starter Kit
