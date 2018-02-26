@@ -14,7 +14,7 @@
 
 
 ## How to use it
-:warning: Notice! Run task only in folder, witch contain `gulpfile.js` otherwise you will get error.
+:warning: Notice! Run task only in folder, witch contain **``gulpfile.js``** otherwise you will get error.
 
 1. Now you can run one of too task:
     - task `gulp` will run dev mode
