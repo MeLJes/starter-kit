@@ -1,4 +1,4 @@
-![ ](/MeLJes/starter-kit/blob/master/preview.png)
+![ ](/preview.png)
 
 
 # ERWIN Starter Kit
