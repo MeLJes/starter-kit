@@ -9,15 +9,15 @@ const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
 const { resolve } = require('path')
 
-process.env.NODE_ENV = 'development';
-
 // Path, related to the root,
 // where both .css and .scss style files
 // will be stored
 const ROOT = './';
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 gulp.task('sass', function () {
-  if (process.env.NODE_ENV === 'development') {
+  if (!isProduction) {
     return gulp.src(resolve(ROOT, 'scss/main.scss'))
       .pipe(sourcemaps.init())
       .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
@@ -42,11 +42,11 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('build', function () {
-  process.env.NODE_ENV = 'production';
-
-  del('**/style.css.map').then(function () {
-    gulp.start('sass');
-  });
+  if (isProduction) {
+    del('**/style.css.map').then(function () {
+      gulp.start('sass');
+    });
+  }
 });
 
 gulp.task('default', ['sass:watch']);
