@@ -2,12 +2,16 @@
 
 
 # ERWIN Starter Kit
-`ERWIN Starter Kit` is a set of SCSS and JS code snippets that helps to start any web-project quickly and easily.
+**ERWIN SK** is a set of SCSS and JS code snippets that helps to start any web-project quickly and easily.
+
+
 
 ## Installation
 1. First of all you need install the latest version of [node.js](https://nodejs.org/uk/)
-2. Now you need to install all packages from dependencies list. Open command line and type `npm install`
-3. Default path for CSS output locate in root folder. You can change this in `gulpfile.js` in line `16` - `const path = './'`
+2. Now you need to install all packages from dependencies list. Open command line and type **`npm install`**
+3. Default path for CSS output locate in root folder. You can change this in **`gulpfile.js`** in line **`16`** - **`const path = './'`**
+
+
 
 ## How to use it
 :warning: Notice! Run task only in folder, witch contain `gulpfile.js` otherwise you will get error.
@@ -17,9 +21,9 @@
     - task `gulp build` will run production mode witch compile your SCSS to minify CSS and add browser prefixes
 2. You can stop any task via press `Ctrl + C`
 
----
 
-### SASS mixin
+
+## SCSS mixin
 To use mixin, you need type in style block `@include mixin-name();`. Mixin may contain arguments (coma separated). Some of them contain default value (if not specify when mixin call, argument will take default value), other `required` and should be specify when mixin called.
 
 :warning: If you wanna change some properties that starting from second one (for example duration from `0.2` to `0.4`), you need specify other arguments that came before current argument. 
@@ -44,7 +48,7 @@ To use mixin, you need type in style block `@include mixin-name();`. Mixin may c
         bold: 700,
         extra-bold: 800,
         black: 900
-    )
+    );
     ```
 3. Equal block size ```@include size();``` or ```@include size-max();```
     - `$width` - required*
