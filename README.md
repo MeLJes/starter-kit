@@ -19,7 +19,7 @@
 
 ---
 
-### SCSS mixin
+### SASS mixin
 To use mixin, you need type in style block `@include mixin-name();`. Mixin may contain arguments (coma separated). Some of them contain default value (if not specify when mixin call, argument will take default value), other `required` and should be specify when mixin called.
 
 :warning: If you wanna change some properties that starting from second one (for example duration from `0.2` to `0.4`), you need specify other arguments that came before current argument. 
