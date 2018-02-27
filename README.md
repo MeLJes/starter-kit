@@ -101,7 +101,7 @@ Mixin may contain comma separated arguments. Some of them contains default value
 
 ---
 
-## SCSS functions
+### SCSS functions
 
 To use functions just type `css-property: function-name()`. Usually functions have only one argument which is **required**. Some functions have `optional` arguments. If you don't pass them, default values will be used.
 
@@ -141,7 +141,7 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
 4. Set `font-weight` property **`weight()`**
 
-    Pass weight name as an argument to set `font-weight`. 
+    Pass weight name as an argument to set `font-weight`.
 
     ```scss
     $weights: (
@@ -176,10 +176,110 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
 ---
 
-## JS code snippets
+### HTML markup and JS code snippets
+
+> Default HTML markup.
+
+```html
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Title</title>
+
+        <!-- Favicon -->
+        <link rel="icon" href="icons/favicon.png" type="images/x-icon" />
+        <!-- Fonts -->
+
+        <!-- Main -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Main -->
+    <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
+```
+
+1. Back to top button
+
+    > Add this snippet after `footer` section before scripts links. `back-to-top.js` file **required**.
+
+    ```html
+    <a href="#0" class="back-top">
+        <svg>
+            <use xlink:href="#svg-arrow-top"></use>
+        </svg>
+    </a>
+    ```
+
+2. Dropdown list
+
+    > `dropdown.js` file **required**.
+
+    ```html
+    <div class="default-dropdown">
+        <div class="js-dropdown">
+            <input type="hidden" name="Dropdown" id="Dropdown" class="js-dropdown_input">
+            <span class="js-dropdown_current">Dropdown</span>
+            <ul>
+                <li class="js-dropdown_item" data-dropdown-value="Value-1">Value-1</li>
+                <li class="js-dropdown_item" data-dropdown-value="Value-2">Value-2</li>
+            </ul>
+        </div><!-- .js-dropdown - END -->
+    </div><!-- .default-dropdown - END -->
+    ```
+
+3. Item counter
+
+    > `item-counter.js` file **required**.
+
+    ```html
+    <div class="items-counter">
+        <button type="button" class="minus">
+            <svg>
+                <use xlink:href="#svg-minus"></use>
+            </svg>
+        </button><!-- .minus - END -->
+
+        <input type="text" name="quantity" value="1" class="quantity"><!-- .quantity - END -->
+
+        <button type="button" class="plus">
+            <svg>
+                <use xlink:href="#svg-plus"></use>
+            </svg>
+        </button><!-- .plus - END -->
+    </div><!-- .items-counter - END -->
+    ```
+
+4. Modal
+
+    > `remodal.min.css` and `remodal-default-theme.min.css` files **required**.
+
+    > `remodal.min.js` file **required**.
+
+    ```html
+    <div class="remodal" data-remodal-id="remodal" data-remodal-options="hashTracking: false">
+        <button data-remodal-action="close" class="remodal-close">
+            <img src="icons/close.svg" alt="Icon" />
+        </button>
+    </div><!-- .remodal - END -->
+    ```
 
 ---
 
-## HTML markup
+#### Other stuff
 
----
+> Include this `robots.txt` to prevent indexing by search robots.
+
+```html
+User-agent: *
+Disallow: /
+```
