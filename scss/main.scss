@@ -1,9 +1,9 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 
 // Helpers
 @import "helpers/variables";
-@import "helpers/mixins";
 @import "helpers/functions";
+@import "helpers/mixins";
 
 // Base styles
 @import "normalize";
@@ -11,27 +11,24 @@
 @import "base/typography";
 @import "base/base";
 
-// Keyframes
-@import "keyframes/keyframes";
-
 // Components
-@import "components/inputs";
-@import "components/buttons";
-@import "components/dropdown";
-@import "components/modal";
-@import "components/slider";
+// @import "components/inputs";
+// @import "components/buttons";
+// @import "components/dropdown";
+// @import "components/modal";
+// @import "components/slider";
 
-// Layout
-@import "layout/header";
-@import "layout/footer";
+// Layouts
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/aside";
 
-// ---------- Pages
+// ------------------
 
-//Home page
-@import "sections/home/section";
+// --- Home page
+@import "sections/home/home";
 
-// ---------- Media
+// ------------------
 
-@import "sections/media";
-
-// ---------- Custom styles
+// Custom
+@import "sections/custom"

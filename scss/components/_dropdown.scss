@@ -1,14 +1,14 @@
-//Default
+// Default
 .default-dropdown {
-  color: $default-color;
-  font-size: $f12px;
-  font-weight: $semi-bold;
+  color: color(default);
+  font-size: px-to-em(12);
+  font-weight: weight(semi-bold);
+  text-align: left;
+  text-transform: uppercase;
   letter-spacing: 1px;
 
-  @extend .up;
-
-  .c-dropdown {
-    z-index: 2;
+  .js-dropdown {
+    z-index: z(default) + 1;
     position: relative;
 
     &, & * {
@@ -16,16 +16,15 @@
     }
   }
   .js-dropdown_current,
-  .c-dropdown_item {
-    transition: background $default-transition, color $default-transition;
+  .js-dropdown_item {
+    @include tr();
 
     &:hover {
-      color: $primary-color;
+      color: color(primary);
     }
   }
-  .c-dropdown_list {
-    background: rgba($white, 0.95);
-    transition: opacity $default-transition, transform $default-transition;
+  .js-dropdown_list {
+    background: rgba(color(white), 0.95);
     will-change: transofrm;
     transform: translateY(10px);
     opacity: 0;
@@ -34,51 +33,50 @@
     top: 100%;
     left: 0;
 
-    @extend .pe-none;
+    @include tr();
+    @extend %pe-none;
   }
-  .c-dropdown.is-open .c-dropdown_list {
+  .js-dropdown.is-open .js-dropdown_list {
     transform: translateY(0);
     opacity: 1;
 
-    @extend .pe-auto;
+    @extend %pe-auto;
   }
-  .c-button,
-  .c-dropdown_item {
+  .js-button,
+  .js-dropdown_item {
     cursor: pointer;
   }
-  .c-button-dropdown {
-    border-bottom: 1px solid $default-color;
-    padding: 10px 15px;
+  .js-button-dropdown {
+    border-bottom: 1px solid color(default);
+    padding: px-to-em(10) px-to-em(15);
 
-    &:after {
+    &::after {
       content: '';
-      background: url("../icons/down-m.svg") no-repeat center center;
+      display: block;
+      background: url("../icons/svg-arrow-bot.svg") no-repeat center center;
       background-size: cover;
-      width: 6px;
-      height: 6px;
-      transition: opacity $default-transition;
+      width: px-to-em(6);
+      height: px-to-em(6);
       transform: translateY(-50%);
 
       position: absolute;
       top: 50%;
-      right: 10px;
+      right: px-to-em(10);
 
-      @extend .db;
-      @extend .backspace;
+      @include tr(opacity);
+      @extend %backspace;
     }
     &:hover:after {
       opacity: 0.5;
     }
   }
-  .c-dropdown_item {
+  .js-dropdown_item {
     border-bottom: 1px solid #dedede;
-    padding: 15px;
+    padding: px-to-em(15);
 
     &:hover {
-      color: $white;
-      background: $primary-color;
+      color: color(white);
+      background: color(primary);
     }
   }
-
-  @extend .tl;
 }

@@ -1,33 +1,4 @@
-//Placeholder color
-::-webkit-input-placeholder {color:$default-color;}
-::-moz-placeholder          {color:$default-color;}
-:-moz-placeholder           {color:$default-color;}
-:-ms-input-placeholder      {color:$default-color;}
-
-//Input auto fill color
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #fff;
-  -webkit-box-shadow: 0 0 0 1000px rgba(255,255,255,0.01) inset;
-  box-shadow: 0 0 0 1000px rgba(255,255,255,0.01) inset;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-//Remove placeholder after click
-input:focus::-webkit-input-placeholder {color:transparent;}
-input:focus:-moz-placeholder           {color:transparent;}
-input:focus::-moz-placeholder          {color:transparent;}
-input:focus:-ms-input-placeholder      {color:transparent;}
-
-//Replace default radio button icon
+// Replace default radio button icon
 // --- Base for label styling
 [type="radio"]:not(:checked),
 [type="radio"]:checked {
@@ -37,7 +8,7 @@ input:focus:-ms-input-placeholder      {color:transparent;}
 [type="radio"]:not(:checked) + label,
 [type="radio"]:checked + label {
   cursor: pointer;
-  padding-left: 30px;
+  padding-left: px-to-em(30);
   position: relative;
 }
 // --- Checkbox aspect
@@ -45,14 +16,15 @@ input:focus:-ms-input-placeholder      {color:transparent;}
 [type="radio"]:checked + label:before,
 [type="radio"]:not(:checked) + label:after,
 [type="radio"]:checked + label:after {
-  width: 20px;
-  height: 20px;
+  width: px-to-em(20);
+  height: px-to-em(20);
   transform: translateY(-50%);
-  transition: all 0.075s ease-in-out;
 
   position: absolute;
   top: 50%;
   left: 0;
+
+  @include tr(all, 0.075);
 }
 [type="radio"]:not(:checked) + label:before,
 [type="radio"]:checked + label:before {
@@ -64,7 +36,7 @@ input:focus:-ms-input-placeholder      {color:transparent;}
 [type="radio"]:not(:checked) + label:after,
 [type="radio"]:checked + label:after {
   content: '';
-  background: url('../icons/radio-a.svg') no-repeat center center;
+  background: url('../icons/radio-active.svg') no-repeat center center;
   background-size: contain;
 }
 // --- Checked mark aspect changes
@@ -75,30 +47,29 @@ input:focus:-ms-input-placeholder      {color:transparent;}
   opacity: 1;
 }
 
-//Responsive
-@media screen and (min-width: #{$screen-zero} ) and (max-width: #{$screen-xs-max} ) {
+@media screen and (min-width: #{ $screen-zero } ) and (max-width: #{ $screen-xs-max } ) {
   [type="radio"]:not(:checked) + label,
   [type="radio"]:checked + label {
-    padding-left: 50px;
+    padding-left: px-to-em(50);
   }
   [type="radio"]:not(:checked) + label:before,
   [type="radio"]:checked + label:before,
   [type="radio"]:not(:checked) + label:after,
   [type="radio"]:checked + label:after {
-    width: 35px;
-    height: 35px;
+    width: px-to-em(35);
+    height: px-to-em(35);
   }
 }
-@media screen and (min-width: #{$screen-sm-min} ) and (max-width: #{$screen-md-max} ) {
+@media screen and (min-width: #{ $screen-sm-min } ) and (max-width: #{ $screen-md-max } ) {
   [type="radio"]:not(:checked) + label,
   [type="radio"]:checked + label {
-    padding-left: 50px;
+    padding-left: px-to-em(50);
   }
   [type="radio"]:not(:checked) + label:before,
   [type="radio"]:checked + label:before,
   [type="radio"]:not(:checked) + label:after,
   [type="radio"]:checked + label:after {
-    width: 45px;
-    height: 45px;
+    width: px-to-em(45);
+    height: px-to-em(45);
   }
 }
