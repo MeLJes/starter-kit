@@ -4,13 +4,13 @@
       var offset = 300,
           offset_opacity = 1200,
           scroll_top_duration = 700,
-          $back_to_top = $('.cd-top');
+          $back_to_top = $('.back-to-top');
 
       //hide or show the "back to top" link
       $(window).scroll(function(){
-          ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+          ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('btt-is-visible') : $back_to_top.removeClass('btt-is-visible btt-fade-out');
           if( $(this).scrollTop() > offset_opacity ) {
-              $back_to_top.addClass('cd-fade-out');
+              $back_to_top.addClass('btt-fade-out');
           }
       });
 
