@@ -36,13 +36,13 @@ Mixin may contain comma separated arguments. Some of them contains default value
 
 > :warning: If you want to pass only second or third argument, you have to pass the first one too. Otherwise, it won't work. E.g. to pass duration as a second argument you can use `@include tr(all, 0.4);`.
 
-**1. Transitions `@include tr();`**
+1. Transitions **`@include tr();`**
 
 * `$property` - default `all`
 * `$duration` - default: `0.2`
 * `$timing-function` - default: `ease-in-out`
 
-**2. Font properties `@include font-prop();`**
+2. Font properties **`@include font-prop();`**
 
 * `$weight` - **required**
 * `$size` - default: `16` (px converted to em)
@@ -61,7 +61,7 @@ Mixin may contain comma separated arguments. Some of them contains default value
   );
   ```
 
-**3. Equal block size `@include size();` or `@include size-max();`**
+3. Equal block size **`@include size();`** or **`@include size-max();`**
 
 * `$width` - **required**
 * `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
@@ -69,7 +69,7 @@ Mixin may contain comma separated arguments. Some of them contains default value
 
 > You need specify one value witch will be set to both sides (width and height).
 
-**4. 16:9 ratio block size `@include ratio-sn-land();` or `@include ratio-sn-port();`**
+4. 16:9 ratio block size **`@include ratio-sn-land();`** or **`@include ratio-sn-port();`**
 
 * `$width` - **required**
 * `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
@@ -79,7 +79,7 @@ Mixin may contain comma separated arguments. Some of them contains default value
 `ratio-sn-land` mixin give you landscape block.
 `ratio-sn-port` make portrait block.
 
-**5. 99:70 ratio (A4) block size `@include ratio-a4-land();` or `@include ratio-a4-port();`**
+5. 99:70 ratio (A4) block size **`@include ratio-a4-land();`** or **`@include ratio-a4-port();`**
 
 * `$width` - required*
 * `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
@@ -89,28 +89,30 @@ Mixin may contain comma separated arguments. Some of them contains default value
 `ratio-a4-land` mixin give you landscape block.
 `ratio-a4-port` make portrait block.
 
-**6. Clear float elements `@include clear-fix();`**
+6. Clear float elements **`@include clear-fix();`**
 
 Including this mixin to any selector will add pseudo-element `::after` with css-property `clear: both` (and couple of others).
 
 > :warning: Note, that if parent selector has `display: flex`, pseudo-element `::after` will take all of his physical space.
 
+---
+
 ## SCSS functions
 
 To use functions just type `css-property: function-name()`. Usually functions have only one argument which is **required**. Some functions have `optional` arguments. If you don't pass them, default values will be used.
 
-**1. Convert PX to EM or REM `px-to-em()` or `px-to-rem()`**
+1. Convert PX to EM or REM **`px-to-em()`** or **`px-to-rem()`**
 
 * `$pixels` - **required**
 * `$context` - default `16` (can be change to set different base point value)
 
 > You need to specify a value (without units). You will get the value with `EM` or `REM` units.
 
-**2. Calculate block width (part from 100%) `calc-width()`**
+2. Calculate block width (part from 100%) **`calc-width()`**
 
 Pass integer as an argument. It simply calculates `100% / $number`.
 
-**3. Pick color from palette `color()`**
+3. Pick color from palette **`color()`**
 
 Pass color name as an argument to get desired color.
 
@@ -133,7 +135,7 @@ $colors: (
 );
 ```
 
-**4. Set `font-weight` property `weight()`**
+4. Set `font-weight` property **`weight()`**
 
 Pass weight name as an argument to set `font-weight`. 
 
@@ -149,7 +151,7 @@ $weights: (
 );
 ```
 
-**5. Set `z-index` property `z()`**
+5. Set `z-index` property **`z()`**
 
 Pass `z-index` name from the list above as an argument.
 
