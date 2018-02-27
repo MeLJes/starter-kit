@@ -44,24 +44,13 @@ Mixin may contain comma separated arguments. Some of them contains default value
 
         > The rest values are specified by separate rules.
 
-2. Font properties **`@include font-prop();`**
+2. Inputs placeholder style **`@include placeholder();`**
 
-    - `$weight` - **required**
-    - `$size` - default: `16` (px converted to em)
+    - `$color` - default: `default`
+    - `$font-size` - default: `16` (px converted to em)
+    - `$font-weight` - default: `regular`
 
-        > You need to specify one of weight property from the list below (name, not number value):
-
-      ```scss
-      $weights: (
-        light: 300,
-        regular: normal,
-        medium: 500,
-        semi-bold: 600,
-        bold: 700,
-        extra-bold: 800,
-        black: 900
-      );
-      ```
+        > This mixin contains 4 prefixes for old browser supporting.
 
 3. Equal block size **`@include size();`** or **`@include size-max();`**
 
@@ -90,14 +79,37 @@ Mixin may contain comma separated arguments. Some of them contains default value
       > You need specify width value and mixin will calculate height.
 
       > `ratio-a4-land` mixin give you landscape block.
-      
+
       >`ratio-a4-port` make portrait block.
 
-6. Clear float elements **`@include clear-fix();`**
+6. Font properties **`@include font-prop();`**
+
+    - `$weight` - **required**
+    - `$size` - default: `16` (px converted to em)
+
+        > You need to specify one of weight property from the list below (name, not number value):
+
+      ```scss
+      $weights: (
+        light: 300,
+        regular: normal,
+        medium: 500,
+        semi-bold: 600,
+        bold: 700,
+        extra-bold: 800,
+        black: 900
+      );
+      ```
+
+7. Clear float elements **`@include clearfix;`**
 
     Including this mixin to any selector will add pseudo-element `::after` with css-property `clear: both` (and couple of others).
 
       > :warning: Note, that if parent selector has `display: flex`, pseudo-element `::after` will take all of his physical space.
+
+8. Remove placeholder on action **`@include placeholder-remove;`**
+
+9. Remove input autofill color **`@include input-autofill;`**
 
 ---
 
@@ -183,28 +195,27 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 ```html
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Title</title>
+    <title>Title</title>
 
-        <!-- Favicon -->
-        <link rel="icon" href="icons/favicon.png" type="images/x-icon" />
-        <!-- Fonts -->
-
-        <!-- Main -->
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
+    <!-- Favicon -->
+    <link rel="icon" href="icons/favicon.png" type="images/x-icon" />
+    <!-- Fonts -->
+    <!-- Main -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
 
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <!-- Main -->
-    <script type="text/javascript" src="js/main.js"></script>
-    </body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
 ```
 
@@ -213,11 +224,11 @@ To use functions just type `css-property: function-name()`. Usually functions ha
     > Add this snippet after `footer` section before scripts links. `back-to-top.js` file **required**.
 
     ```html
-    <a href="#0" class="back-top">
-        <svg>
-            <use xlink:href="#svg-arrow-top"></use>
-        </svg>
-    </a>
+    <button type="button" class="back-to-top">
+      <svg>
+        <use xlink:href="#svg-arrow-top"></use>
+      </svg>
+    </button>
     ```
 
 2. Dropdown list
@@ -226,14 +237,14 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
     ```html
     <div class="default-dropdown">
-        <div class="js-dropdown">
-            <input type="hidden" name="Dropdown" id="Dropdown" class="js-dropdown_input">
-            <span class="js-dropdown_current">Dropdown</span>
-            <ul>
-                <li class="js-dropdown_item" data-dropdown-value="Value-1">Value-1</li>
-                <li class="js-dropdown_item" data-dropdown-value="Value-2">Value-2</li>
-            </ul>
-        </div><!-- .js-dropdown - END -->
+      <div class="js-dropdown">
+        <input type="hidden" name="Dropdown" id="Dropdown" class="js-dropdown_input">
+        <span class="js-dropdown_current">Dropdown</span>
+        <ul>
+          <li class="js-dropdown_item" data-dropdown-value="Value-1">Value-1</li>
+          <li class="js-dropdown_item" data-dropdown-value="Value-2">Value-2</li>
+        </ul>
+      </div><!-- .js-dropdown - END -->
     </div><!-- .default-dropdown - END -->
     ```
 
@@ -243,19 +254,19 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
     ```html
     <div class="items-counter">
-        <button type="button" class="minus">
-            <svg>
-                <use xlink:href="#svg-minus"></use>
-            </svg>
-        </button><!-- .minus - END -->
+      <button type="button" class="minus">
+        <svg>
+          <use xlink:href="#svg-minus"></use>
+        </svg>
+      </button><!-- .minus - END -->
 
-        <input type="text" name="quantity" value="1" class="quantity"><!-- .quantity - END -->
+      <input type="text" name="quantity" value="1" class="quantity"><!-- .quantity - END -->
 
-        <button type="button" class="plus">
-            <svg>
-                <use xlink:href="#svg-plus"></use>
-            </svg>
-        </button><!-- .plus - END -->
+      <button type="button" class="plus">
+        <svg>
+          <use xlink:href="#svg-plus"></use>
+        </svg>
+      </button><!-- .plus - END -->
     </div><!-- .items-counter - END -->
     ```
 
@@ -267,9 +278,9 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
     ```html
     <div class="remodal" data-remodal-id="remodal" data-remodal-options="hashTracking: false">
-        <button data-remodal-action="close" class="remodal-close">
-            <img src="icons/close.svg" alt="Icon" />
-        </button>
+      <button data-remodal-action="close" class="remodal-close">
+        <img src="icons/close.svg" alt="Icon" />
+      </button>
     </div><!-- .remodal - END -->
     ```
 
@@ -277,9 +288,22 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
 #### Other stuff
 
+1. Robots.txt
 > Include this `robots.txt` to prevent indexing by search robots.
 
 ```html
 User-agent: *
 Disallow: /
+```
+
+2. Responsive layouts
+
+```scss
+@media screen and (min-width: #{  } ) {
+
+}
+
+@media screen and (min-width: #{  } ) and (max-width: #{  } ) {
+
+}
 ```
