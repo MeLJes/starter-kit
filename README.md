@@ -47,7 +47,7 @@ Mixin may contain comma separated arguments. Some of them contains default value
     * `$weight` - **required**
     * `$size` - default: `16` (px converted to em)
 
-    > You need to specify one of weight property from the list below (name, not number value):
+  > You need to specify one of weight property from the list below (name, not number value):
 
       ```scss
       $weights: (
