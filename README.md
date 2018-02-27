@@ -1,4 +1,4 @@
-![ ](/preview.png)
+![/preview.png]()
 
 
 # ERWIN Starter Kit
@@ -73,6 +73,7 @@ $weights: (
   `ratio-a4-port` make portrait block.
 
 **6. Clear float elements ```@include clear-fix();```**
+
 Including this mixin to any selector will add pseudo-element `::after` with css-property `clear: both` (and couple others).
 
 :warning: Note, that if parent selector has `display: flex`, pseudo-element `::after` will take his physic place. 
