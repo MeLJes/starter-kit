@@ -47,7 +47,7 @@ Mixin may contain comma separated arguments. Some of them contains default value
 * `$weight` - **required**
 * `$size` - default: `16` (px converted to em)
 
-  > You need to specify one of weight property from the list below (name, not number value):
+> You need to specify one of weight property from the list below (name, not number value):
 
   ```scss
   $weights: (
@@ -67,33 +67,33 @@ Mixin may contain comma separated arguments. Some of them contains default value
 * `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
 * `$max-width` - default: `auto` (this argument available only for `size-max` mixin)
 
-  > You need specify one value witch will be set to both sides (width and height).
+> You need specify one value witch will be set to both sides (width and height).
 
 **4. 16:9 ratio block size `@include ratio-sn-land();` or `@include ratio-sn-port();`**
 
 * `$width` - **required**
 * `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
 
-  > You need specify width value and mixin will calculate height.
+> You need specify width value and mixin will calculate height.
 
-  `ratio-sn-land` mixin give you landscape block.
-  `ratio-sn-port` make portrait block.
+`ratio-sn-land` mixin give you landscape block.
+`ratio-sn-port` make portrait block.
 
 **5. 99:70 ratio (A4) block size `@include ratio-a4-land();` or `@include ratio-a4-port();`**
 
 * `$width` - required*
 * `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
 
-  > You need specify width value and mixin will calculate height.
+> You need specify width value and mixin will calculate height.
 
-  `ratio-a4-land` mixin give you landscape block.
-  `ratio-a4-port` make portrait block.
+`ratio-a4-land` mixin give you landscape block.
+`ratio-a4-port` make portrait block.
 
 **6. Clear float elements `@include clear-fix();`**
 
-  Including this mixin to any selector will add pseudo-element `::after` with css-property `clear: both` (and couple of others).
+Including this mixin to any selector will add pseudo-element `::after` with css-property `clear: both` (and couple of others).
 
-  > :warning: Note, that if parent selector has `display: flex`, pseudo-element `::after` will take all of his physical space.
+> :warning: Note, that if parent selector has `display: flex`, pseudo-element `::after` will take all of his physical space.
 
 ## SCSS functions
 
@@ -104,7 +104,7 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 * `$pixels` - **required**
 * `$context` - default `16` (can be change to set different base point value)
 
-  > You need to specify a value (without units). You will get the value with `EM` or `REM` units.
+> You need to specify a value (without units). You will get the value with `EM` or `REM` units.
 
 **2. Calculate block width (part from 100%) `calc-width()`**
 
