@@ -38,16 +38,16 @@ Mixin may contain comma separated arguments. Some of them contains default value
 
 1. Transitions **`@include tr();`**
 
-    * `$property` - default `all`
-    * `$duration` - default: `0.2`
-    * `$timing-function` - default: `ease-in-out`
+    - `$property` - default `all`
+    - `$duration` - default: `0.2`
+    - `$timing-function` - default: `ease-in-out`
 
 2. Font properties **`@include font-prop();`**
 
-    * `$weight` - **required**
-    * `$size` - default: `16` (px converted to em)
+    - `$weight` - **required**
+    - `$size` - default: `16` (px converted to em)
 
-      > You need to specify one of weight property from the list below (name, not number value):
+    > You need to specify one of weight property from the list below (name, not number value):
 
       ```scss
       $weights: (
@@ -157,15 +157,25 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
     ```scss
     $z-layers: (
-        // --- Main 
+        // --- Main
         back: -1,
         base: 0,
         default: 1,
 
-        // --- Additional  
+        // --- Additional
         overlay: 999,
         extended: 9999
     );
     ```
 
       > This argument can be used in different variations, for example `z-index: z(default) + 10`.
+
+---
+
+## JS code snippets
+
+---
+
+## HTML markup
+
+---
