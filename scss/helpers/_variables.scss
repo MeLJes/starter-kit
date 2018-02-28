@@ -47,18 +47,23 @@ $z-layers: (
 $breakpoints: (
   zero: 0,
   extra-small: 480,
+  extra-small-max: 767,
   small: 768,
+  small-max: 991,
   medium: 992,
+  medium-max: 1199,
   large: 1200,
+  large-max: 1599,
   extra-large: 1600,
+  extra-large: 1999,
   huge: 2000
 );
 
 // Container
-$container-max: px-to-em(1200);
-$container-padding: px-to-em(30);
-$container-padding-md: px-to-em(20);
+$container-max: 1200;
+$container-padding: 30;
+$container-padding-md: 20;
 
 // Default values
 $default-size: 16;
-$default-radius: px-to-em(5);
+$default-radius: 5;
