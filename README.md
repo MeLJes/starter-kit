@@ -188,7 +188,7 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
 6. Set responsive breakpoint
 
-    Pass `breakpoint` name from the list above as an argument. Number value will converted from px to em.
+    Pass `breakpoint` name from the list above as an argument. Number value will converted to em.
 
     ```scss
     $breakpoints: (
