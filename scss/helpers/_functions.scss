@@ -7,7 +7,7 @@
 }
 
 @function calc-width($number) {
-    @return 100% / $number; 
+    @return 100% / $number;
 }
 
 @function color($key) {
@@ -34,5 +34,14 @@
   }
 
   @warn "Unknown `#{$key}` in $z-layers.";
+  @return null;
+}
+
+@function breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @return px-to-em( map-get($breakpoints, $breakpoint) );
+  }
+
+  @warn "Unknown `#{$breakpoint}` in $breakpoints.";
   @return null;
 }

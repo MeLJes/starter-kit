@@ -186,6 +186,33 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
       > This argument can be used in different variations, for example `z-index: z(default) + 10`.
 
+6. Set responsive breakpoint
+
+    Pass `breakpoint` name from the list above as an argument. Number value will converted from px to em.
+
+    ```scss
+    $breakpoints: (
+      zero: 0,
+      extra-small: 480,
+      extra-small-max: 767,
+      small: 768,
+      small-max: 991,
+      medium: 992,
+      medium-max: 1199,
+      large: 1200,
+      large-max: 1599,
+      extra-large: 1600,
+      extra-large: 1999,
+      huge: 2000
+    );
+    ```
+
+    > Base `min-width` markup ```@media screen and (min-width: #{  } ) { code }```
+
+    > Base `min-width` and `max-width` markup ```@media screen and (min-width: #{  } ) and (max-width: #{  } ) { code }```
+
+    > Responsive powered by [mq() SASS mixin](https://github.com/sass-mq/sass-mq)
+
 ---
 
 ### HTML markup and JS code snippets
@@ -296,11 +323,3 @@ To use functions just type `css-property: function-name()`. Usually functions ha
     User-agent: *
     Disallow: /
     ```
-
-2. Responsive
-
-    > Responsive powered by [mq() SASS mixin](https://github.com/sass-mq/sass-mq)
-
-    > Base `min-width` markup **```@media screen and (min-width: #{  } ) { code }```**
-
-    > Base `min-width` and `max-width` markup **```@media screen and (min-width: #{  } ) and (max-width: #{  } ) { code }```**
