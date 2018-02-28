@@ -135,14 +135,14 @@ To use functions just type `css-property: function-name()`. Usually functions ha
     ```scss
     $colors: (
       // --- Main
-      default: #FA6ACC,
-      primary: #F02A52,
-      secondary: #09A6E4,
+      default: #545454,
+      primary: #828282,
+      secondary: #b2b2b2,
 
       // --- Additional
       white: #ffffff,
       black: #000000,
-      gray: #dedede,
+      gray: #808080,
 
       // --- Alerts
       success: #b1d845,
@@ -289,21 +289,18 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 #### Other stuff
 
 1. Robots.txt
-> Include this `robots.txt` to prevent indexing by search robots.
 
-```html
-User-agent: *
-Disallow: /
-```
+    > Include this `robots.txt` to prevent indexing by search robots.
 
-2. Responsive layouts
+    ```html
+    User-agent: *
+    Disallow: /
+    ```
 
-```scss
-@media screen and (min-width: #{  } ) {
+2. Responsive
 
-}
+    > Responsive powered by [mq() SASS mixin](https://github.com/sass-mq/sass-mq)
 
-@media screen and (min-width: #{  } ) and (max-width: #{  } ) {
+    > Base `min-width` markup **```@media screen and (min-width: #{  } ) { code }```**
 
-}
-```
+    > Base `min-width` and `max-width` markup **```@media screen and (min-width: #{  } ) and (max-width: #{  } ) { code }```**
