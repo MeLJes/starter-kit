@@ -3,22 +3,21 @@ html, body {
 }
 html {
   overflow-y: scroll;
-
-  @extend .box-sizing;
+}
+html, *:not(img) {
+  @extend %box-sizing;
 }
 body {
-  color: $default-color;
+  color: color(default);
   padding: 0 !important;
   position: relative;
 
-  @extend .df-c;
+  @extend %df-c;
 }
 *:not(img) {
   outline: none;
   margin: 0;
   padding: 0;
-
-  @extend .box-sizing;
 
   &:before,
   &:after {
@@ -46,15 +45,16 @@ a:focus,
 a:visited {
   color: inherit;
   text-decoration: none;
-  transition: color $default-transition;
+
+  @include tr(color);
 }
 fieldset {
   border: none;
 }
-input,
-textarea {
+input, textarea {
   border-radius: 0;
-  transition: all $default-transition;
+
+  @include tr();
 }
 input[type="search"] {
   background: none;
@@ -64,5 +64,6 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  transition: all $default-transition;
+
+  @include tr(color);
 }

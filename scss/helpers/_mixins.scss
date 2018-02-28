@@ -9,6 +9,22 @@
   font-weight: weight($weight);
 }
 
+// Change input placeholder style
+@mixin placeholder($color: color(default), $font-size: px-to-em(16), $font-weight: weight(regular)) {
+  ::-webkit-input-placeholder { color: $color; font-size: $font-size; font-weight: $font-weight; }
+  ::-moz-placeholder          { color: $color; font-size: $font-size; font-weight: $font-weight; }
+  :-moz-placeholder           { color: $color; font-size: $font-size; font-weight: $font-weight; }
+  :-ms-input-placeholder      { color: $color; font-size: $font-size; font-weight: $font-weight; }
+}
+
+// Remove placeholder on click
+@mixin placeholder-remove($color: transparent) {
+  input:focus::-webkit-input-placeholder { color: $color; }
+  input:focus::-moz-placeholder          { color: $color; }
+  input:focus:-moz-placeholder           { color: $color; }
+  input:focus:-ms-input-placeholder      { color: $color; }
+}
+
 // Width & Height are equal
 @mixin size($width, $unit: px, $height: $width) {
   width: #{$width}$unit;
@@ -48,10 +64,28 @@
 }
 
 // Clear floating
-@mixin clear-fix {
+@mixin clearfix {
   &:after {
     content: '';
     display: table;
     clear: both;
+  }
+}
+
+// Input autofill color
+@mixin input-autofill {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #fff;
+    -webkit-box-shadow: 0 0 0 1000px rgba(255,255,255,0.01) inset;
+    box-shadow: 0 0 0 1000px rgba(255,255,255,0.01) inset;
+    transition: background-color 5000s ease-in-out 0s;
   }
 }

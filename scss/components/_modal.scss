@@ -1,32 +1,33 @@
-//Default
+// Default
 html.remodal-is-locked {
   overflow: hidden;
 }
 .remodal-overlay {
-  background: rgba($white, 0.9);
+  background: rgba(color(white), 0.9);
 }
 .remodal-wrapper {
   padding: 0;
 }
 .remodal {
   background: transparent;
-  color: $default-color;
+  color: color(default);
+  padding: 0;
+  margin: 0 auto;
   width: 80%;
   max-width: none;
   height: 100%;
-  margin: 0 auto;
-  padding: 0;
 
-  @extend .backspace;
+  @extend %backspace;
 }
 .remodal-close {
-  width: 30px;
-  height: 30px;
-  transition: opacity $default-transition;
+  width: px-to-em(30);
+  height: px-to-em(30);
 
-  top: 25px;
+  top: px-to-em(2530);
   right: 0;
   left: auto;
+
+  @include tr(opacity);
 
   &:hover {
     opacity: 0.5;
@@ -36,17 +37,16 @@ html.remodal-is-locked {
   }
 }
 
-//Responsive
-@media screen and (min-width: #{$screen-zero} ) and (max-width: #{$screen-xs-max} ) {
+@media screen and (min-width: #{ $screen-zero } ) and (max-width: #{ $screen-xs-max } ) {
   .remodal {
     width: 100%;
 
     .remodal-close {
-      width: 40px;
-      height: 40px;
+      width: px-to-em(40);
+      height: px-to-em(40);
 
-      top: 25px;
-      right: 25px;
+      top: px-to-em(25);
+      right: px-to-em(25);
     }
   }
 }

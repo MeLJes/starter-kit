@@ -1,41 +1,38 @@
-//Links
+// Default buttons
 
-//Back to top
-.cd-top {
-  background: $primary-color;
+// Back to top
+.back-to-top {
+  background: color(primary);
   border-radius: 50%;
-  height: 45px;
-  width: 45px;
-
+  height: px-to-em(45);
+  width: px-to-em(45);
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
   transition: opacity .3s 0s, visibility 0s .3s;
 
-  z-index: 9999;
+  z-index: z(extended);
   position: fixed;
   bottom: 5%;
   right: 2%;
-
-  @extend .db;
 }
-.cd-top.cd-is-visible,
-.cd-top.cd-fade-out,
-.no-touch .cd-top:hover {
+.back-to-top.btt-is-visible,
+.back-to-top.btt-fade-out,
+.no-touch .back-to-top:hover {
   transition: opacity .3s 0s, visibility 0s 0s;
 }
-.cd-top.cd-is-visible {
+.back-to-top.btt-is-visible {
   visibility: visible;
   opacity: 1;
 }
-.cd-top.cd-fade-out {
+.back-to-top.btt-fade-out {
   opacity: .5;
 
   &:hover {
     opacity: 1;
   }
 }
-.no-touch .cd-top:hover {
-  background-color: $secondary-color;
+.no-touch .back-to-top:hover {
+  background-color: color(secondary);
   opacity: 1;
 }

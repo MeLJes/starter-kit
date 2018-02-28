@@ -8,8 +8,7 @@ const del = require('del');
 const { resolve } = require('path')
 
 // Path, related to the root,
-// where both .css and .scss style files
-// will be stored
+// where both .css and .scss style files will be stored
 const ROOT = './';
 
 const isProduction = process.env.NODE_ENV === 'production'

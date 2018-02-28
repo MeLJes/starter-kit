@@ -13,7 +13,7 @@
                   });
                   $(this).toggleClass('is-open');
               });
-              $html.on('click.ui.dropdown', '.c-dropdown_item', function(e) {
+              $html.on('click.ui.dropdown', '.js-dropdown_item', function(e) {
                   e.preventDefault();
                   console.log('--');
                   setTimeout(function(){
