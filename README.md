@@ -207,9 +207,9 @@ To use functions just type `css-property: function-name()`. Usually functions ha
     );
     ```
 
-    > Base `min-width` markup ```@media screen and (min-width: breakpoint(point)) { code }```
+    > Base ```@media screen and (min-width: breakpoint(point)) { code }```
 
-    > Base `min-width` and `max-width` markup ```@media screen and (min-width: breakpoint(point)) and (max-width: breakpoint(point)) { code }```
+    > Base ```@media screen and (min-width: breakpoint(point)) and (max-width: breakpoint(point)) { code }```
 
     > Responsive powered by [mq() SASS mixin](https://github.com/sass-mq/sass-mq)
 
