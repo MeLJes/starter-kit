@@ -258,8 +258,6 @@ To use functions just type `css-property: function-name()`. Usually functions ha
     </button>
     ```
 
-    > Script
-
     ```javascript
     function backToTop() {
       var offset = 300,
