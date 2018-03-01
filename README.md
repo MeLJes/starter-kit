@@ -34,7 +34,7 @@ To use mixins just type in `@include mixin-name();`.
 
 Mixin may contain comma separated arguments. Some of them contains default value which will be used if no one was specified, other arguments are **required** and should be passed when mixin is called.
 
-> :warning: If you want to pass only second or third argument, you have to pass the first one too. Otherwise, it won't work. E.g. to pass duration as a second argument you can use `@include tr(all, 0.4);`.
+> :warning: If you want to pass only second or third argument, you have to pass the first one too. Otherwise, it won't work. E.g. to pass duration as a second argument you can use `@include tr(all, 0.4);`
 
 1. Transitions **`@include tr();`**
 
@@ -42,7 +42,7 @@ Mixin may contain comma separated arguments. Some of them contains default value
     - `$duration` - default: `0.2`
     - `$timing-function` - default: `ease-in-out`
 
-        > The rest values are specified by separate rules.
+        > The rest values are specified by separate rules
 
 2. Inputs placeholder style **`@include placeholder();`**
 
@@ -50,7 +50,7 @@ Mixin may contain comma separated arguments. Some of them contains default value
     - `$font-size` - default: `16` (px converted to em)
     - `$font-weight` - default: `regular`
 
-        > This mixin contains 4 prefixes for old browser supporting.
+        > This mixin contains 4 prefixes for old browser supporting
 
 3. Equal block size **`@include size();`** or **`@include size-max();`**
 
@@ -58,29 +58,29 @@ Mixin may contain comma separated arguments. Some of them contains default value
     - `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
     - `$max-width` - default: `auto` (this argument available only for `size-max` mixin)
 
-      > You need specify one value witch will be set to both sides (width and height).
+      > You need specify one value witch will be set to both sides (width and height)
 
 4. 16:9 ratio block size **`@include ratio-sn-land();`** or **`@include ratio-sn-port();`**
 
     - `$width` - **required**
     - `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
 
-      > You need specify width value and mixin will calculate height.
+      > You need specify width value and mixin will calculate height
 
-      > `ratio-sn-land` mixin give you landscape block.
+      > `ratio-sn-land` mixin give you landscape block
 
-      > `ratio-sn-port` make portrait block.
+      > `ratio-sn-port` make portrait block
 
 5. 99:70 ratio (A4) block size **`@include ratio-a4-land();`** or **`@include ratio-a4-port();`**
 
     - `$width` - **required**
     - `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
 
-      > You need specify width value and mixin will calculate height.
+      > You need specify width value and mixin will calculate height
 
-      > `ratio-a4-land` mixin give you landscape block.
+      > `ratio-a4-land` mixin give you landscape block
 
-      >`ratio-a4-port` make portrait block.
+      >`ratio-a4-port` make portrait block
 
 6. Font properties **`@include font-prop();`**
 
@@ -105,7 +105,7 @@ Mixin may contain comma separated arguments. Some of them contains default value
 
     Including this mixin to any selector will add pseudo-element `::after` with css-property `clear: both` (and couple of others).
 
-      > :warning: Note, that if parent selector has `display: flex`, pseudo-element `::after` will take all of his physical space.
+      > :warning: Note, that if parent selector has `display: flex`, pseudo-element `::after` will take all of his physical space
 
 8. Remove placeholder on action **`@include placeholder-remove;`**
 
@@ -122,7 +122,7 @@ To use functions just type `css-property: function-name()`. Usually functions ha
     - `$pixels` - **required**
     - `$context` - default `16` (can be change to set different base point value)
 
-      > You need to specify a value (without units). You will get the value with `EM` or `REM` units.
+      > You need to specify a value (without units). You will get the value with `EM` or `REM` units
 
 2. Calculate block width (part from 100%) **`calc-width()`**
 
@@ -169,7 +169,7 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
 5. Set `z-index` property **`z()`**
 
-    Pass `z-index` name from the list above as an argument.
+    Pass `z-index` name from the list below as an argument.
 
     ```scss
     $z-layers: (
@@ -184,11 +184,11 @@ To use functions just type `css-property: function-name()`. Usually functions ha
     );
     ```
 
-      > This argument can be used in different variations, for example `z-index: z(default) + 10`.
+      > This argument can be used in different variations, for example `z-index: z(default) + 10`
 
 6. Set responsive breakpoint
 
-    Pass `breakpoint` name from the list above as an argument. Number value will converted to em.
+    Pass `breakpoint` name from the list below as an argument. Number value will converted to em.
 
     ```scss
     $breakpoints: (
@@ -207,9 +207,9 @@ To use functions just type `css-property: function-name()`. Usually functions ha
     );
     ```
 
-    > Base ```@media screen and (min-width: breakpoint(point)) { code }```
+    > Base `@media screen and (min-width: breakpoint(point)) { code }`
 
-    > Base ```@media screen and (min-width: breakpoint(point)) and (max-width: breakpoint(point)) { code }```
+    > Base `@media screen and (min-width: breakpoint(point)) and (max-width: breakpoint(point)) { code }`
 
     > Responsive powered by [mq() SASS mixin](https://github.com/sass-mq/sass-mq)
 
@@ -217,7 +217,7 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
 ### HTML markup and JS code snippets
 
-> Default HTML markup.
+> Default HTML markup
 
 ```html
 <!DOCTYPE html>
@@ -248,7 +248,7 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
 1. Back to top button
 
-    > Add this snippet after `footer` section before scripts links. `back-to-top.js` file **required**.
+    > Add this snippet after `footer` section before scripts links
 
     ```html
     <button type="button" class="back-to-top">
@@ -258,9 +258,33 @@ To use functions just type `css-property: function-name()`. Usually functions ha
     </button>
     ```
 
-2. Dropdown list
+    > Script
 
-    > `dropdown.js` file **required**.
+    ```javascript
+    function backToTop() {
+      var offset = 300,
+          offset_opacity = 1200,
+          scroll_top_duration = 700,
+          $back_to_top = $('.back-to-top');
+
+      $(window).scroll(function(){
+        $(this).scrollTop() > offset
+          ? $back_to_top.addClass('btt-is-visible')
+          : $back_to_top.removeClass('btt-is-visible btt-fade-out');
+
+        if( $(this).scrollTop() > offset_opacity ) {
+          $back_to_top.addClass('btt-fade-out');
+        }
+      });
+
+      $back_to_top.on('click', function(event){
+        event.preventDefault();
+        $('body,html').animate({ scrollTop: 0 }, scroll_top_duration);
+      });
+    }
+    ```
+
+2. Dropdown list
 
     ```html
     <div class="default-dropdown">
@@ -275,9 +299,48 @@ To use functions just type `css-property: function-name()`. Usually functions ha
     </div><!-- .default-dropdown - END -->
     ```
 
-3. Item counter
+    ```javascript
+    function dropdown() {
+      if ($('.js-dropdown').length) {
+        var $html = $('html');
 
-    > `item-counter.js` file **required**.
+        $html.on('click.ui.dropdown', '.js-dropdown', function (e) {
+          e.preventDefault();
+          $('.js-dropdown').not($(this)).each(function () {
+            $(this).removeClass('is-open');
+          });
+          $(this).toggleClass('is-open');
+        });
+
+        $html.on('click.ui.dropdown', '.js-dropdown_item', function (e) {
+          e.preventDefault();
+          console.log('--');
+          setTimeout(function () {
+            $('.js-dropdown').each(function () {
+              $(this).removeClass('is-open');
+            });
+          }, 100);
+        });
+
+        $html.on('click.ui.dropdown', '.js-dropdown [data-dropdown-value]', function (e) {
+          e.preventDefault();
+          var $item = $(this);
+          var $dropdown = $item.parents('.js-dropdown');
+          $dropdown.find('.js-dropdown_input').val($item.data('dropdown-value'));
+          $dropdown.find('.js-dropdown_current').html($item.html());
+        });
+
+        $html.on('click.ui.dropdown', function (e) {
+          var $target = $(e.target);
+          if (!$target.parents().hasClass('js-dropdown')) {
+            $('.js-dropdown').removeClass('is-open');
+          }
+        });
+      }
+    }
+    ```
+
+3. Item counter
 
     ```html
     <div class="items-counter">
@@ -297,11 +360,33 @@ To use functions just type `css-property: function-name()`. Usually functions ha
     </div><!-- .items-counter - END -->
     ```
 
+    ```javascript
+    function itemCounter(elem, minus, plus) {
+      if ( $(elem).length ) {
+        $(minus).click(function() {
+            var $input = $(this).parent().find('input');
+            var count = parseInt($input.val()) - 1;
+            count = count < 1 ? 1 : count;
+            $input.val(count);
+            $input.change();
+            return false;
+        });
+
+        $(plus).click(function() {
+            var $input = $(this).parent().find('input');
+            $input.val(parseInt($input.val()) + 1);
+            $input.change();
+            return false;
+        });
+      }
+    }
+    ```
+
 4. Modal
 
-    > `remodal.min.css` and `remodal-default-theme.min.css` files **required**.
+    > `remodal.min.css` and `remodal-default-theme.min.css` files **required**
 
-    > `remodal.min.js` file **required**.
+    > `remodal.min.js` file **required**
 
     ```html
     <div class="remodal" data-remodal-id="remodal" data-remodal-options="hashTracking: false">
@@ -317,7 +402,7 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
 1. Robots.txt
 
-    > Include this `robots.txt` to prevent indexing by search robots.
+    > Include this `robots.txt` to prevent indexing by search robots
 
     ```html
     User-agent: *
