@@ -229,16 +229,12 @@ To use functions just type `css-property: function-name()`. Usually functions ha
 
     <title>Title</title>
 
-    <!-- Favicon -->
     <link rel="icon" href="icons/favicon.png" type="images/x-icon" />
-    <!-- Fonts -->
-    <!-- Main -->
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
-
-    <!-- jQuery -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <!-- Main -->
     <script src="js/main.js"></script>
