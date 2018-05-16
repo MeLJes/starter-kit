@@ -10,7 +10,7 @@
   width: 100%;
   height: inherit;
   margin: 0 auto;
-  padding: 0 px-to-em($container-padding);
+  padding: 0 px-to-rem($container-padding);
   position: relative;
 }
 .link-block,
