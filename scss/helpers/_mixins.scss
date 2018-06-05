@@ -63,7 +63,6 @@
   height: #{($width * 1.41428571429)}$unit;
 }
 
-// Clear floating
 @mixin clearfix {
   &:after {
     content: '';
@@ -72,7 +71,6 @@
   }
 }
 
-// Input autofill color
 @mixin input-autofill {
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
@@ -87,5 +85,19 @@
     -webkit-box-shadow: 0 0 0 1000px rgba(255,255,255,0.01) inset;
     box-shadow: 0 0 0 1000px rgba(255,255,255,0.01) inset;
     transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+@mixin scrollbar($color) {
+  &::-webkit-scrollbar-thumb {
+    background: $color;
+    border-radius: px-to-rem(10);
+    width: px-to-rem(10);
+    height: px-to-rem(10);
+  }
+  &::-webkit-scrollbar {
+    background: color(light-gray);
+    width: px-to-rem(3);
+    height: px-to-rem(3);
   }
 }
