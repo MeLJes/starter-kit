@@ -39,7 +39,7 @@
 
 @function breakpoint($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
-    @return px-to-em( map-get($breakpoints, $breakpoint) );
+    @return px-to-rem( map-get($breakpoints, $breakpoint) );
   }
 
   @warn "Unknown `#{$breakpoint}` in $breakpoints.";

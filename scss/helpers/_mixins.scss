@@ -1,74 +1,201 @@
-// Transitions
-@mixin tr($property: all, $duration: 0.2, $timing-function: ease-in-out) {
+/* Mixins
+ *
+ * font();                  — Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support
+ * flex();                  — Set element flex properties
+ * touch();                 — Set pointer-events and user-select CSS properties
+ * position();              — Set element z-index and position
+ * tr();                    — Transitions
+ * square();                — Set equal width & height
+ * square-max();            — Set equal width, height, max-width & max-height
+ * ratio-sn-land();         — Set 16:9 ratio (Landscape)
+ * ratio-sn-port();         — Set 16:9 ratio (Portrait)
+ * ratio-a4-land();         — Set 99:70 ratio (A4, Landscape)
+ * ratio-a4-port();         — Set 99:70 ratio (A4, Portrait)
+ * scrollbar();             — Change scroll bar color
+ * placeholder();           — Change input placeholder style
+ * placeholder-remove();    — Remove placeholder on click
+ * input-autofill();        — Change autofill color
+ * clearfix();              — Add clearfix for floating elements
+ *
+ */
+
+@mixin font(
+  $font-size: 16,
+  $font-weight: regular,
+  $gradient: false
+  ) {
+  font-size: px-to-rem($font-size);
+  font-weight: weight($font-weight);
+
+  @if $gradient == gradient {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@mixin flex(
+  $display: flex,
+  $direction: row,
+  $wrap: wrap,
+  $justify-content: flex-start,
+  $align-items: flex-start
+  ) {
+  display: $display;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin touch($property: auto) {
+  user-select: $property;
+  pointer-events: $property;
+}
+
+@mixin position(
+  $index,
+  $position: relative,
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto
+  ) {
+  z-index: z($index);
+  position: $position;
+
+  @if $top == auto {
+    top: auto;
+  }  @else {
+    top: px-to-rem($top);
+  }
+
+  @if $right == auto {
+    right: auto;
+  }  @else {
+    right: px-to-rem($right);
+  }
+
+  @if $bottom == auto {
+    bottom: auto;
+  }  @else {
+    bottom: px-to-rem($bottom);
+  }
+
+  @if $left == auto {
+    left: auto;
+  }  @else {
+    left: px-to-rem($left);
+  }
+}
+
+@mixin tr(
+  $property: all,
+  $duration: 0.2,
+  $timing-function: ease-in-out
+  ) {
   transition: $property #{$duration}s $timing-function;
 }
 
-// Set font size & weight
-@mixin font-prop($weight, $size: $default-size) {
-  font-size: calc-em($size);
-  font-weight: weight($weight);
+@mixin square(
+  $width,
+  $unit: px,
+  $height: $width
+  ) {
+  @if $unit == px {
+    width: px-to-rem($width);
+    height: px-to-rem($height);
+  } @else {
+    width: #{$width}$unit;
+    height: #{$height}$unit;
+  }
 }
 
-// Change input placeholder style
-@mixin placeholder($color: color(default), $font-size: px-to-em(16), $font-weight: weight(regular)) {
-  ::-webkit-input-placeholder { color: $color; font-size: $font-size; font-weight: $font-weight; }
-  ::-moz-placeholder          { color: $color; font-size: $font-size; font-weight: $font-weight; }
-  :-moz-placeholder           { color: $color; font-size: $font-size; font-weight: $font-weight; }
-  :-ms-input-placeholder      { color: $color; font-size: $font-size; font-weight: $font-weight; }
+@mixin square-max(
+  $width,
+  $max-width: auto,
+  $unit: px,
+  $height: $width,
+  $max-height: $max-width
+  ) {
+  @if $unit == px {
+    width: px-to-rem($width);
+    max-width: px-to-rem($max-width);
+    height: px-to-rem($height);
+    max-height: px-to-rem($max-height);
+  } @else {
+    width: #{$width}$unit;
+    max-width: #{$max-width}$unit;
+    height: #{$height}$unit;
+    max-height: #{$max-height}$unit;
+  }
 }
 
-// Remove placeholder on click
+@mixin ratio-sn-land($width, $unit: px) {
+  @if $unit == px {
+    width: px-to-rem($width);
+    height: px-to-rem($width / 1.77777777778);
+  } @else {
+    width: #{$width}$unit;
+    height: #{($width / 1.77777777778)}$unit;
+  }
+}
+
+@mixin ratio-sn-port($width, $unit: px) {
+  @if $unit == px {
+    width: px-to-rem($width);
+    height: px-to-rem($width * 1.77777777778);
+  } @else {
+    width: #{$width}$unit;
+    height: #{($width * 1.77777777778)}$unit;
+  }
+}
+
+@mixin ratio-a4-land($width, $unit: px) {
+  @if $unit == px {
+    width: px-to-rem($width);
+    height: px-to-rem($width / 1.41428571429);
+  } @else {
+    width: #{$width}$unit;
+    height: #{($width / 1.41428571429)}$unit;
+  }
+}
+
+@mixin ratio-a4-port($width, $unit: px) {
+  @if $unit == px {
+    width: px-to-rem($width);
+    height: px-to-rem($width * 1.41428571429);
+  } @else {
+    width: #{$width}$unit;
+    height: #{($width * 1.41428571429)}$unit;
+  }
+}
+
+@mixin scrollbar($scroll: primary, $panel: light-gray) {
+  &::-webkit-scrollbar-thumb {
+    background: color($scroll);
+    border-radius: px-to-rem(10);
+    width: px-to-rem(10);
+    height: px-to-rem(10);
+  }
+  &::-webkit-scrollbar {
+    background: color($panel);
+    width: px-to-rem(3);
+    height: px-to-rem(3);
+  }
+}
+
+@mixin placeholder($color: default, $font-size: 16, $font-weight: regular) {
+  ::-webkit-input-placeholder { color: color($color); font-size: px-to-em($font-size); font-weight: weight($font-weight); }
+  ::-moz-placeholder          { color: color($color); font-size: px-to-em($font-size); font-weight: weight($font-weight); }
+  :-moz-placeholder           { color: color($color); font-size: px-to-em($font-size); font-weight: weight($font-weight); }
+  :-ms-input-placeholder      { color: color($color); font-size: px-to-em($font-size); font-weight: weight($font-weight); }
+}
+
 @mixin placeholder-remove($color: transparent) {
   input:focus::-webkit-input-placeholder { color: $color; }
   input:focus::-moz-placeholder          { color: $color; }
   input:focus:-moz-placeholder           { color: $color; }
   input:focus:-ms-input-placeholder      { color: $color; }
-}
-
-// Width & Height are equal
-@mixin size($width, $unit: px, $height: $width) {
-  width: #{$width}$unit;
-  height: #{$height}$unit;
-}
-
-// Preset max width & height
-@mixin size-max($width, $max-width: auto, $unit: px, $height: $width, $max-height: $max-width) {
-  width: #{$width}$unit;
-  max-width: #{$max-width}$unit;
-  height: #{$height}$unit;
-  max-height: #{$max-height}$unit;
-}
-
-// Set 16:9 ratio (Sixteen to Nine) - Landscape
-@mixin ratio-sn-land($width, $unit: px) {
-  width: #{$width}$unit;
-  height: #{($width / 1.77777777778)}$unit;
-}
-
-// Set 16:9 ratio (Sixteen to Nine) - Portrait
-@mixin ratio-sn-port($width, $unit: px) {
-  width: #{$width}$unit;
-  height: #{($width * 1.77777777778)}$unit;
-}
-
-// Set 99:70 ratio (A4) - Landscape
-@mixin ratio-a4-land($width, $unit: px) {
-  width: #{$width}$unit;
-  height: #{($width / 1.41428571429)}$unit;
-}
-
-// Set 99:70 ratio (A4) - Portrait
-@mixin ratio-a4-port($width, $unit: px) {
-  width: #{$width}$unit;
-  height: #{($width * 1.41428571429)}$unit;
-}
-
-@mixin clearfix {
-  &:after {
-    content: '';
-    display: table;
-    clear: both;
-  }
 }
 
 @mixin input-autofill {
@@ -88,16 +215,10 @@
   }
 }
 
-@mixin scrollbar($color) {
-  &::-webkit-scrollbar-thumb {
-    background: $color;
-    border-radius: px-to-rem(10);
-    width: px-to-rem(10);
-    height: px-to-rem(10);
-  }
-  &::-webkit-scrollbar {
-    background: color(light-gray);
-    width: px-to-rem(3);
-    height: px-to-rem(3);
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
   }
 }

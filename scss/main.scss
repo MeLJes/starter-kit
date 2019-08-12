@@ -4,15 +4,17 @@
 @import "helpers/variables";
 @import "helpers/functions";
 @import "helpers/mixins";
-@import "helpers/libs/mq";
+// @import "helpers/libs/mq";
 
 // Base styles
-@import "normalize";
+@import "base/normalize";
 @import "base/class";
 @import "base/typography";
+@import "base/tags";
 @import "base/base";
 
 // Components
+@import "components/loader";
 // @import "components/inputs";
 // @import "components/buttons";
 // @import "components/dropdown";

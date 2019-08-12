@@ -1,11 +1,10 @@
-// Global
 html {
   font-family: $default-font;
   font-size: 100%;
   font-weight: normal;
 }
 body {
-  font-size: 1em;
+  font-size: 1rem;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }

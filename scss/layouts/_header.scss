@@ -1,0 +1,41 @@
+.header {
+  padding: px-to-rem(50) 0;
+
+  z-index: z(overlay);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  @include tr;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    img {
+      max-width: px-to-rem(70);
+    }
+  }
+
+  // Menu
+  .menu-panel {
+    @include tr;
+  }
+
+  // --- Scroll
+  &.on-scroll {
+    background: color(white);
+    box-shadow: $box-shadow;
+    padding: px-to-rem(30) 0;
+  }
+}
+
+// --- Mobile device
+body.it-is-mobile {
+  .header {
+
+  }
+}
