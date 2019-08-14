@@ -1,8 +1,8 @@
-// Fonts
-$default-font: 'Arial', sans-serif;
-$secondary-font: 'Times New Roman', serif;
+// --- Font families
+$font-default: 'Arial', sans-serif;
+$font-secondary: 'Times New Roman', serif;
 
-// Weights
+// --- Font weights
 $weights: (
   light: 300,
   regular: normal,
@@ -13,25 +13,27 @@ $weights: (
   black: 900
 );
 
-// Colors
+// --- Colors
 $colors: (
   // --- Main
-  default: #545454,
-  primary: #828282,
-  secondary: #b2b2b2,
+  default: var(--default),
+  primary: var(--primary),
+  secondary: var(--secondary),
 
   // --- Additional
-  white: #ffffff,
-  black: #000000,
-  gray: #808080,
+  white: var(--white),
+  black: var(--black),
+  gray: var(--gray),
+  light-gray: var(--light-gray),
+  dark-gray: var(--dark-gray),
 
   // --- Alerts
-  success: #b1d845,
-  warning: #ffeaa7,
-  error: #e41c1c
+  success: var(--success),
+  warning: var(--warning),
+  error: var(--error)
 );
 
-// Z-index
+// --- Z-index
 $z-layers: (
   // --- Main
   back: -1,
@@ -43,7 +45,7 @@ $z-layers: (
   extended: 9999
 );
 
-// Breakpoints
+// --- Breakpoints
 $breakpoints: (
   zero: 0,
   extra-small: 480,
@@ -59,12 +61,10 @@ $breakpoints: (
   huge: 2000
 );
 
-// Container
+// --- Container
 $container-max: 1200;
 $container-padding: 30;
-$container-padding-md: 20;
 
-// Default values
+// --- Default values
 $default-size: 16;
 $default-radius: 5;
-$box-shadow: 1px 1px 20px -6px rgba(0,0,0,0.45);

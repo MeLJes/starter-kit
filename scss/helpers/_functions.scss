@@ -6,10 +6,6 @@
   @return #{$pixels / $context}rem;
 }
 
-@function calc-width($number) {
-    @return 100% / $number;
-}
-
 @function color($key) {
   @if map-has-key($colors, $key) {
     @return map-get($colors, $key);

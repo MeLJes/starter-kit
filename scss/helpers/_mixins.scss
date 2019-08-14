@@ -1,21 +1,23 @@
 /* Mixins
  *
- * font();                  — Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support
- * flex();                  — Set element flex properties
- * touch();                 — Set pointer-events and user-select CSS properties
- * position();              — Set element z-index and position
- * tr();                    — Transitions
- * square();                — Set equal width & height
- * square-max();            — Set equal width, height, max-width & max-height
- * ratio-sn-land();         — Set 16:9 ratio (Landscape)
- * ratio-sn-port();         — Set 16:9 ratio (Portrait)
- * ratio-a4-land();         — Set 99:70 ratio (A4, Landscape)
- * ratio-a4-port();         — Set 99:70 ratio (A4, Portrait)
- * scrollbar();             — Change scroll bar color
- * placeholder();           — Change input placeholder style
- * placeholder-remove();    — Remove placeholder on click
- * input-autofill();        — Change autofill color
- * clearfix();              — Add clearfix for floating elements
+ * font                  — Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support
+ * flex                  — Set element flex properties
+ * touch                 — Set pointer-events and user-select CSS properties
+ * position              — Set element z-index and position
+ * centering-flex        — Centering element with flex properties
+ * centering-position    — Centering element with position and transform properties
+ * tr                    — Transitions
+ * square                — Set equal width & height
+ * square-max            — Set equal width, height, max-width & max-height
+ * ratio-sn-land         — Set 16:9 ratio (Landscape)
+ * ratio-sn-port         — Set 16:9 ratio (Portrait)
+ * ratio-a4-land         — Set 99:70 ratio (A4, Landscape)
+ * ratio-a4-port         — Set 99:70 ratio (A4, Portrait)
+ * scrollbar             — Change scroll bar color
+ * placeholder           — Change input placeholder style
+ * placeholder-remove    — Remove placeholder on click
+ * input-autofill        — Change autofill color
+ * clearfix              — Add clearfix for floating elements
  *
  */
 
@@ -35,16 +37,16 @@
 
 @mixin flex(
   $display: flex,
-  $direction: row,
-  $wrap: wrap,
   $justify-content: flex-start,
-  $align-items: flex-start
+  $align-items: flex-start,
+  $direction: row,
+  $wrap: nowrap
   ) {
   display: $display;
-  flex-direction: $direction;
-  flex-wrap: $wrap;
   justify-content: $justify-content;
   align-items: $align-items;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
 }
 
 @mixin touch($property: auto) {
@@ -86,6 +88,22 @@
   }  @else {
     left: px-to-rem($left);
   }
+}
+
+@mixin centering-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin centering-position {
+  transform: translate(-50%, -50%);
+
+  z-index: z(default);
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 @mixin tr(

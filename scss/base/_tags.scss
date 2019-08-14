@@ -1,18 +1,20 @@
-html, body {
+html,
+body {
   height: 100%;
 }
 html {
   overflow-y: scroll;
-}
-html, *:not(img) {
-  @extend %box-sizing;
+
+  &,
+  *:not(img) {
+    box-sizing: border-box;
+  }
 }
 body {
   color: color(default);
-  padding: 0 !important;
   position: relative;
 
-  @extend %df-c;
+  @include flex(flex, flex-start, stretch, column);
 }
 *:not(img) {
   outline: none;
@@ -35,8 +37,37 @@ svg {
   width: 100%;
   height: 100%;
 }
-img, object, embed {
+img,
+object,
+embed {
+  height: auto;
   max-width: 100%;
+}
+button {
+  cursor: pointer;
+}
+button,
+fieldset,
+input,
+textarea {
+  background: none;
+  border: none;
+  border-radius: 0;
+
+  @include tr;
+}
+input,
+textarea {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance:textfield;
 }
 a,
 a:hover,
@@ -45,25 +76,6 @@ a:focus,
 a:visited {
   color: inherit;
   text-decoration: none;
-
-  @include tr;
-}
-fieldset {
-  border: none;
-}
-input, textarea {
-  border-radius: 0;
-
-  @include tr;
-}
-input[type="search"] {
-  background: none;
-  border: none;
-}
-button {
-  background: none;
-  border: none;
-  cursor: pointer;
 
   @include tr;
 }

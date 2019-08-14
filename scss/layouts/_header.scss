@@ -1,18 +1,11 @@
 .header {
   padding: px-to-rem(50) 0;
 
-  z-index: z(overlay);
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-
+  @include position(overlay, fixed, 0, 0, auto, 0);
   @include tr;
 
   .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex (flex, space-between, center);
   }
   .logo {
     img {
@@ -28,7 +21,7 @@
   // --- Scroll
   &.on-scroll {
     background: color(white);
-    box-shadow: $box-shadow;
+    box-shadow: 1px 1px 20px -6px rgba(var(--default),0.45);
     padding: px-to-rem(30) 0;
   }
 }
@@ -36,6 +29,6 @@
 // --- Mobile device
 body.it-is-mobile {
   .header {
-
+    padding: px-to-rem(25) 0;
   }
 }

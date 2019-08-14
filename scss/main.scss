@@ -8,15 +8,14 @@
 
 // Base styles
 @import "base/normalize";
-@import "base/class";
 @import "base/typography";
 @import "base/tags";
 @import "base/base";
 
 // Components
 @import "components/loader";
+@import "components/buttons";
 // @import "components/inputs";
-// @import "components/buttons";
 // @import "components/dropdown";
 // @import "components/modal";
 // @import "components/slider";
