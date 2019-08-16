@@ -15,11 +15,10 @@
 [type="checkbox"]:checked + .wpcf7-list-item-label::before,
 [type="checkbox"]:not(:checked) + .wpcf7-list-item-label::after,
 [type="checkbox"]:checked + .wpcf7-list-item-label::after {
+  @include square(20, px);
   @include position(base, absolute, auto, auto, auto, 0);
   @include tr(all, 0.075);
 
-  width: px-to-em(20);
-  height: px-to-em(20);
   transform: translateY(-50%);
 
   top: 50%;
@@ -45,6 +44,7 @@
   opacity: 1;
 }
 
+// --- Responsive
 @media screen and (min-width: breakpoint(zero)) and (max-width: breakpoint(extra-small-max)) {
   [type="checkbox"]:not(:checked) + .wpcf7-list-item-label,
   [type="checkbox"]:checked + .wpcf7-list-item-label {
@@ -54,7 +54,6 @@
   [type="checkbox"]:checked + .wpcf7-list-item-label::before,
   [type="checkbox"]:not(:checked) + .wpcf7-list-item-label::after,
   [type="checkbox"]:checked + .wpcf7-list-item-label::after {
-    width: px-to-em(35);
-    height: px-to-em(35);
+    @include square(20, px);
   }
 }
