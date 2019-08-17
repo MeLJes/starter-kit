@@ -26,14 +26,14 @@
 [type="checkbox"]:not(:checked) + .wpcf7-list-item-label::before,
 [type="checkbox"]:checked + .wpcf7-list-item-label::before {
   content: '';
-  background: url('../icons/svg-checkbox.svg') no-repeat center center;
+  background: url('../icons/checkbox.svg') no-repeat center center;
   background-size: contain;
 }
 // --- Checked mark aspect
 [type="checkbox"]:not(:checked) + .wpcf7-list-item-label::after,
 [type="checkbox"]:checked + .wpcf7-list-item-label::after {
   content: '';
-  background: url('../icons/svg-checkbox-active.svg') no-repeat center center;
+  background: url('../icons/checkbox-active.svg') no-repeat center center;
   background-size: contain;
 }
 // --- Checked mark aspect changes
