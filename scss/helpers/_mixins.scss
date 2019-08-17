@@ -60,7 +60,8 @@
   $top: auto,
   $right: auto,
   $bottom: auto,
-  $left: auto
+  $left: auto,
+  $unit: px
   ) {
   z-index: z($index);
   position: $position;
@@ -68,25 +69,41 @@
   @if $top == auto {
     top: auto;
   }  @else {
-    top: px-to-rem($top);
+    @if $unit == px {
+      top: px-to-rem($top);
+    } @else {
+      top: #{$top}$unit;
+    }
   }
 
   @if $right == auto {
     right: auto;
   }  @else {
-    right: px-to-rem($right);
+    @if $unit == px {
+      right: px-to-rem($right);
+    } @else {
+      right: #{$right}$unit;
+    }
   }
 
   @if $bottom == auto {
     bottom: auto;
   }  @else {
-    bottom: px-to-rem($bottom);
+    @if $unit == px {
+      bottom: px-to-rem($bottom);
+    } @else {
+      bottom: #{$bottom}$unit;
+    }
   }
 
   @if $left == auto {
     left: auto;
   }  @else {
-    left: px-to-rem($left);
+    @if $unit == px {
+      left: px-to-rem($left);
+    } @else {
+      left: #{$left}$unit;
+    }
   }
 }
 
