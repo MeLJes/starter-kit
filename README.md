@@ -30,83 +30,12 @@ Compiles SCSS to CSS for production to the `css` folder. Styles are autoprefixed
 
 ### SCSS mixins
 
-**`font`** — Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support
+**`font`** — Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support.
+> **`@include font(size, weight, gradient);`**
+
+**`font`** — Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support.
 > `@include font(size, weight, gradient);`
 
-1. Transitions **`@include tr();`**
-
-    - `$property` - default `all`
-    - `$duration` - default: `0.2`
-    - `$timing-function` - default: `ease-in-out`
-
-        > The rest values are specified by separate rules
-
-2. Inputs placeholder style **`@include placeholder();`**
-
-    - `$color` - default: `default`
-    - `$font-size` - default: `16` (px converted to em)
-    - `$font-weight` - default: `regular`
-
-        > This mixin contains 4 prefixes for old browser supporting
-
-3. Equal block size **`@include size();`** or **`@include size-max();`**
-
-    - `$width` - **required**
-    - `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
-    - `$max-width` - default: `auto` (this argument available only for `size-max` mixin)
-
-      > You need specify one value witch will be set to both sides (width and height)
-
-4. 16:9 ratio block size **`@include ratio-sn-land();`** or **`@include ratio-sn-port();`**
-
-    - `$width` - **required**
-    - `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
-
-      > You need specify width value and mixin will calculate height
-
-      > `ratio-sn-land` mixin give you landscape block
-
-      > `ratio-sn-port` make portrait block
-
-5. 99:70 ratio (A4) block size **`@include ratio-a4-land();`** or **`@include ratio-a4-port();`**
-
-    - `$width` - **required**
-    - `$unit` - default `px` (can be change to `vw`, `vh`, `%` or other)
-
-      > You need specify width value and mixin will calculate height
-
-      > `ratio-a4-land` mixin give you landscape block
-
-      >`ratio-a4-port` make portrait block
-
-6. Font properties **`@include font-prop();`**
-
-    - `$weight` - **required**
-    - `$size` - default: `16` (px converted to em)
-
-        > You need to specify one of weight property from the list below (name, not number value):
-
-      ```scss
-      $weights: (
-        light: 300,
-        regular: normal,
-        medium: 500,
-        semi-bold: 600,
-        bold: 700,
-        extra-bold: 800,
-        black: 900
-      );
-      ```
-
-7. Clear float elements **`@include clearfix;`**
-
-    Including this mixin to any selector will add pseudo-element `::after` with css-property `clear: both` (and couple of others).
-
-      > :warning: Note, that if parent selector has `display: flex`, pseudo-element `::after` will take all of his physical space
-
-8. Remove placeholder on action **`@include placeholder-remove;`**
-
-9. Remove input autofill color **`@include input-autofill;`**
 
 ---
 
