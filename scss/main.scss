@@ -1,27 +1,30 @@
 @charset "UTF-8";
 
-// Helpers
+// --- Helpers
 @import "helpers/variables";
 @import "helpers/functions";
 @import "helpers/mixins";
 // @import "helpers/libs/mq";
 
-// Base styles
+// --- Base styles
 @import "base/normalize";
 @import "base/typography";
 @import "base/tags";
 @import "base/base";
 
-// Components
+// --- Components
 @import "components/loader";
 @import "components/buttons";
 @import "components/forms";
-@import "components/wp/forms";
 // @import "components/dropdown";
 // @import "components/modal";
 // @import "components/slider";
 
-// Layouts
+// ------ WP
+@import "components/wp/forms";
+@import "components/wp/cf7";
+
+// --- Layouts
 @import "layouts/header";
 @import "layouts/footer";
 @import "layouts/aside";
@@ -33,5 +36,5 @@
 
 // ------------------
 
-// Custom
+// ------ Custom
 @import "sections/custom"

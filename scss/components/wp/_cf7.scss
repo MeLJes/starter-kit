@@ -1,0 +1,209 @@
+// --- Base CF7 elements
+.form-wrapper {
+  form {
+    position: relative;
+  }
+  span.ajax-loader {
+    @include square(25, px);
+    @include position(base, absolute, auto, 0, 0, auto);
+
+    background: url('../icons/loaders/preloader.svg') no-repeat center center;
+    background-size: cover;
+  }
+}
+
+
+
+
+// --- Fields settings
+.fields-wrapper {
+  width: 100%;
+  position: relative;
+
+  .field {
+    margin: 0 auto px-to-rem(25);
+    width: 100%;
+    position: relative;
+
+    @include tr();
+    @include input-autofill;
+
+    &:not(:last-child) {
+      margin-bottom: px-to-rem(30);
+    }
+    &.submit {
+      margin-bottom: 0;
+    }
+    input {
+      font-size: px-to-rem(14);
+      border-bottom: px-to-rem(1) solid color(secondary);
+      width: 100%;
+      height: px-to-rem(35);
+      padding: px-to-rem(5) 0;
+    }
+    .field-title {
+      font-size: px-to-rem(14);
+      font-weight: weight(semi-bold);
+      transform: translate(0, -#{px-to-rem(10)});
+
+      pointer-events: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      @include tr(all, 0.2);
+    }
+    .wpcf7-form-control-wrap.focus + .field-title {
+      color: color(primary);
+      font-size: px-to-rem(12);
+      transform: translate(0, -#{px-to-rem(32)});
+    }
+    .checkbox-label {
+      display: block;
+    }
+
+    // Extra checkbox
+    &.multi-boxes {
+      &::after {
+        content: '';
+        display: block;
+        background: color(primary);
+        height: px-to-rem(2);
+        width: 100%;
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: px-to-rem(-40);
+      }
+      .field-title {
+        display: block;
+        font-weight: weight(semi-bold);
+        margin-bottom: px-to-rem(30);
+        transform: none;
+
+        position: relative;
+        bottom: auto;
+      }
+      span.wpcf7-list-item:not(:last-child) {
+        margin-bottom: px-to-rem(20);
+      }
+    }
+
+    // Errors and other stuff CF7
+    .wpcf7-form-control-wrap {
+      position: static;
+    }
+    .wpcf7-not-valid-tip {
+      font-size: px-to-rem(10);
+
+      position: absolute;
+      top: calc(100% + #{px-to-rem(8)});
+      right: px-to-rem(0);
+      left: auto;
+
+      /*font-size: 0;
+      color: transparent;
+      transform: translateY(-50%);
+
+      position: absolute;
+      top: 50%;
+      right: 0;*/
+    }
+
+    // PP
+    &.checkbox {
+      a {
+        padding-left: px-to-em(45);
+      }
+    }
+  }
+  .checkbox {
+    font-size: px-to-rem(14);
+    font-weight: weight(medium);
+    text-align: left;
+    margin-bottom: px-to-rem(25);
+
+    a {
+      display: block;
+      color: color(primary);
+      font-weight: weight(bold);
+    }
+  }
+  .button {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+
+.subscribe {
+  form {
+    position: relative;
+  }
+  // CF7
+  div.wpcf7-response-output,
+  span.ajax-loader {
+    transform: none;
+
+    top: auto;
+    bottom: px-to-rem(15);
+  }
+
+  span.wpcf7-not-valid-tip {
+    color: color(error);
+  }
+  div.wpcf7-response-output {
+    border: none;
+    color: transparent;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+    width: px-to-rem(44);
+    height: px-to-rem(44);
+    //transform: translateY(-50%);
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  div.wpcf7-mail-sent-ok {
+    &.hide {
+      opacity: 0;
+
+      @include tr;
+    }
+  }
+  div.wpcf7-validation-errors,
+  div.wpcf7-acceptance-missing,
+  div.wpcf7-mail-sent-ok {
+    &::after {
+      content: '';
+      display: block;
+      width: px-to-rem(44);
+      height: px-to-rem(44);
+
+      @extend .centering;
+    }
+  }
+  div.wpcf7-validation-errors,
+  div.wpcf7-acceptance-missing {
+    &::after {
+      background: url('../icons/icon-warn.svg') no-repeat center;
+      background-size: cover;
+    }
+  }
+  div.wpcf7-mail-sent-ok {
+    &::after {
+      background: url('../icons/icon-success.svg') no-repeat center;
+      background-size: contain;
+    }
+  }
+  span.wpcf7-list-item {
+    margin: 0;
+  }
+  .wpcf7-list-item-label {
+    display: block;
+  }
+}
