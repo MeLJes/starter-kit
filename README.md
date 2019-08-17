@@ -38,6 +38,78 @@ Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for 
 
 Set element flex properties.
 
+> **`@include touch(property);`**
+
+Set pointer-events and user-select CSS properties.
+
+> **`@include position(index, position, top, right, bottom, left, unit);`**
+
+Set element z-index and position.
+
+> **`@include padding(top, right, bottom, left, unit);`**
+
+Set element paddings.
+
+> **`@include centering-flex;`**
+
+Centering element with flex properties.
+
+> **`@include centering-position;`**
+
+Centering element with position and transform properties.
+
+> **`@include tr;`**
+
+Transitions.
+
+> **`@include width(width, unit, max-width, unit);`**
+
+Set element width and max-width.
+
+> **`@include square(width, unit);`**
+
+Set equal width & height.
+
+> **`@include square-max(width, max-width, unit);`**
+
+Set equal width, height, max-width & max-height.
+
+> **`@include ratio-sn-land(width, unit);`**
+
+Set 16:9 ratio (Landscape).
+
+> **`@include ratio-sn-port(width, unit);`**
+
+Set 16:9 ratio (Portrait).
+
+> **`@include ratio-a4-land(width, unit);`**
+
+Set 99:70 ratio (A4, Landscape).
+
+> **`@include ratio-a4-port(width, unit);`**
+
+Set 99:70 ratio (A4, Portrait).
+
+> **`@include scrollbar(scroll, panel);`**
+
+Change scroll bar colors.
+
+> **`@include placeholder(color, size, weight);`**
+
+Change input placeholder style.
+
+> **`@include placeholder-remove(color);`**
+
+Remove placeholder on click.
+
+> **`@include input-autofill;`**
+
+Change autofill color.
+
+> **`@include clearfix;`**
+
+Add clearfix for floating elements.
+
 ---
 
 ### SCSS functions

@@ -197,7 +197,7 @@
 
 @mixin square-max(
   $width,
-  $max-width: auto,
+  $max-width,
   $unit: px,
   $height: $width,
   $max-height: $max-width
