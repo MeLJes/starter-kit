@@ -31,12 +31,12 @@ Compiles SCSS to CSS for production to the `css` folder. Styles are autoprefixed
 ### SCSS mixins
 
 > **`@include font(size, weight, gradient);`**
+
 Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support.
 
+> **`@include flex(display, justify-content, align-items, direction, wrap);`**
 
-**`font`** — Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support.
-> `@include font(size, weight, gradient);`
-
+Set element flex properties.
 
 ---
 
