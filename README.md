@@ -28,13 +28,9 @@ Compiles SCSS to CSS for production to the `css` folder. Styles are autoprefixed
 
 ---
 
-### SCSS mixin
+### SCSS mixins
 
-To use mixins just type in `@include mixin-name();`.
-
-Mixin may contain comma separated arguments. Some of them contains default value which will be used if no one was specified, other arguments are **required** and should be passed when mixin is called.
-
-> :warning: If you want to pass only second or third argument, you have to pass the first one too. Otherwise, it won't work. E.g. to pass duration as a second argument you can use `@include tr(all, 0.4);`
+> `@include font($font-size, $font-weight, $gradient);` — Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support
 
 1. Transitions **`@include tr();`**
 
