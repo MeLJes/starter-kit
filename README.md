@@ -30,11 +30,11 @@ Compiles SCSS to CSS for production to the `css` folder. Styles are autoprefixed
 
 ### SCSS mixins
 
-> **`@include font(size, weight, gradient);`**
+**`@include font(size, weight, gradient);`**
 
 Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support.
 
-> **`@include flex(display, justify-content, align-items, direction, wrap);`**
+**`@include flex(display, justify-content, align-items, direction, wrap);`**
 
 Set element flex properties.
 
@@ -58,7 +58,7 @@ Centering element with flex properties.
 
 Centering element with position and transform properties.
 
-> **`@include tr;`**
+> **`@include tr(property, duration, timing-function);`**
 
 Transitions.
 
