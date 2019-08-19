@@ -114,103 +114,31 @@ Add clearfix for floating elements.
 
 ### SCSS functions
 
-To use functions just type `css-property: function-name()`. Usually functions have only one argument which is **required**. Some functions have `optional` arguments. If you don't pass them, default values will be used.
+**`px-to-rem() | px-to-em()`**
 
-1. Convert PX to EM or REM **`px-to-em()`** or **`px-to-rem()`**
+Convert PX to EM or REM.
 
-    - `$pixels` - **required**
-    - `$context` - default `16` (can be change to set different base point value)
+**`color()`**
 
-      > You need to specify a value (without units). You will get the value with `EM` or `REM` units
+Pick color from palette.
 
-2. Calculate block width (part from 100%) **`calc-width()`**
+**`weight()`**
 
-    Pass integer as an argument. It simply calculates `100% / $number`.
+Set `font-weight` property.
 
-3. Pick color from palette **`color()`**
+**`z()`**
 
-    Pass color name as an argument to get desired color.
+Set `z-index` property.
 
-    ```scss
-    $colors: (
-      // --- Main
-      default: #545454,
-      primary: #828282,
-      secondary: #b2b2b2,
+**`breakpoint()`**
 
-      // --- Additional
-      white: #ffffff,
-      black: #000000,
-      gray: #808080,
+Set `breakpoint` name from the list below as an argument. Number value will converted to rem.
 
-      // --- Alerts
-      success: #b1d845,
-      warning: #ffeaa7,
-      error: #e41c1c
-    );
-    ```
+> `@media screen and (min-width: breakpoint(point)) { code }`
 
-4. Set `font-weight` property **`weight()`**
+> `@media screen and (min-width: breakpoint(point)) and (max-width: breakpoint(point)) { code }`
 
-    Pass weight name as an argument to set `font-weight`.
-
-    ```scss
-    $weights: (
-        light: 300,
-        regular: normal,
-        medium: 500,
-        semi-bold: 600,
-        bold: 700,
-        extra-bold: 800,
-        black: 900
-    );
-    ```
-
-5. Set `z-index` property **`z()`**
-
-    Pass `z-index` name from the list below as an argument.
-
-    ```scss
-    $z-layers: (
-        // --- Main
-        back: -1,
-        base: 0,
-        default: 1,
-
-        // --- Additional
-        overlay: 999,
-        extended: 9999
-    );
-    ```
-
-      > This argument can be used in different variations, for example `z-index: z(default) + 10`
-
-6. Set responsive breakpoint
-
-    Pass `breakpoint` name from the list below as an argument. Number value will converted to em.
-
-    ```scss
-    $breakpoints: (
-      zero: 0,
-      extra-small: 480,
-      extra-small-max: 767,
-      small: 768,
-      small-max: 991,
-      medium: 992,
-      medium-max: 1199,
-      large: 1200,
-      large-max: 1599,
-      extra-large: 1600,
-      extra-large: 1999,
-      huge: 2000
-    );
-    ```
-
-    > Base `@media screen and (min-width: breakpoint(point)) { code }`
-
-    > Base `@media screen and (min-width: breakpoint(point)) and (max-width: breakpoint(point)) { code }`
-
-    > Responsive powered by [mq() SASS mixin](https://github.com/sass-mq/sass-mq)
+> Responsive library [mq() SASS mixin](https://github.com/sass-mq/sass-mq)
 
 ---
 
