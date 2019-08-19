@@ -30,81 +30,83 @@ Compiles SCSS to CSS for production to the `css` folder. Styles are autoprefixed
 
 ### SCSS mixins
 
-**`@include font(size, weight, gradient);`** — Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support.
+**`@include font(size, weight, gradient);`**
 
-`@include flex(`**display, justify-content, align-items, direction, wrap**`);`
+Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support.
+
+**`include flex(display, justify-content, align-items, direction, wrap);`**
 
 Set element flex properties.
 
-> **`@include touch(property);`**
+**`@include touch(property);`**
 
 Set pointer-events and user-select CSS properties.
 
-> **`@include position(index, position, top, right, bottom, left, unit);`**
+**`@include position(index, position, top, right, bottom, left, unit);`**
 
 Set element z-index and position.
 
-> **`@include padding(top, right, bottom, left, unit);`**
+**`@include padding(top, right, bottom, left, unit);`**
 
 Set element paddings.
 
-> **`@include centering-flex;`**
+**`@include centering-flex;`**
 
 Centering element with flex properties.
 
-> **`@include centering-position;`**
+**`@include centering-position(index);`**
 
 Centering element with position and transform properties.
 
-> **`@include tr(property, duration, timing-function);`**
+**`@include tr(property, duration, timing-function);`**
 
 Transitions.
 
-> **`@include width(width, unit, max-width, unit);`**
+**`@include width(width, unit, max-width, unit);`**
 
 Set element width and max-width.
 
-> **`@include square(width, unit);`**
+**`@include square(width, unit);`**
 
 Set equal width & height.
 
-> **`@include square-max(width, max-width, unit);`**
+**`@include square-max(width, max-width, unit);`**
 
 Set equal width, height, max-width & max-height.
 
-> **`@include ratio-sn-land(width, unit);`**
+**`@include ratio-sn-land(width, unit);`**
 
 Set 16:9 ratio (Landscape).
 
-> **`@include ratio-sn-port(width, unit);`**
+**`@include ratio-sn-port(width, unit);`**
 
 Set 16:9 ratio (Portrait).
 
-> **`@include ratio-a4-land(width, unit);`**
+**`@include ratio-a4-land(width, unit);`**
 
 Set 99:70 ratio (A4, Landscape).
 
-> **`@include ratio-a4-port(width, unit);`**
+**`@include ratio-a4-port(width, unit);`**
 
 Set 99:70 ratio (A4, Portrait).
 
-> **`@include scrollbar(scroll, panel);`**
+**`@include scrollbar(scroll, panel);`**
 
 Change scroll bar colors.
 
-> **`@include placeholder(color, size, weight);`**
+**`@include placeholder(color, size, weight);`**
 
 Change input placeholder style.
 
-> **`@include placeholder-remove(color);`**
+**`@include placeholder-remove(color);`**
 
 Remove placeholder on click.
 
-> **`@include input-autofill;`**
+**`@include input-autofill;`**
 
 Change autofill color.
 
-> **`@include clearfix;`**
+**`@include clearfix;`**
 
 Add clearfix for floating elements.
 

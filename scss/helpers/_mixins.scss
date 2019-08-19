@@ -134,10 +134,13 @@
   align-items: center;
 }
 
-@mixin centering-position {
+@mixin centering-position(
+  $index: default
+  ) {
+
   transform: translate(-50%, -50%);
 
-  z-index: z(default);
+  z-index: z($index);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -153,7 +156,7 @@
 }
 
 @mixin width(
-  $width: auto,
+  $width,
   $unit: px,
   $width-max: none,
   $unit-max: px,
@@ -216,7 +219,11 @@
   }
 }
 
-@mixin ratio-sn-land($width, $unit: px) {
+@mixin ratio-sn-land(
+  $width,
+  $unit: px
+  ) {
+
   @if $unit == px {
     width: px-to-rem($width);
     height: px-to-rem($width / 1.77777777778);
@@ -226,7 +233,11 @@
   }
 }
 
-@mixin ratio-sn-port($width, $unit: px) {
+@mixin ratio-sn-port(
+  $width,
+  $unit: px
+  ) {
+
   @if $unit == px {
     width: px-to-rem($width);
     height: px-to-rem($width * 1.77777777778);
@@ -236,7 +247,11 @@
   }
 }
 
-@mixin ratio-a4-land($width, $unit: px) {
+@mixin ratio-a4-land(
+  $width,
+  $unit: px
+  ) {
+
   @if $unit == px {
     width: px-to-rem($width);
     height: px-to-rem($width / 1.41428571429);
@@ -246,7 +261,11 @@
   }
 }
 
-@mixin ratio-a4-port($width, $unit: px) {
+@mixin ratio-a4-port(
+  $width,
+  $unit: px
+  ) {
+
   @if $unit == px {
     width: px-to-rem($width);
     height: px-to-rem($width * 1.41428571429);
@@ -256,7 +275,11 @@
   }
 }
 
-@mixin scrollbar($scroll: primary, $panel: light-gray) {
+@mixin scrollbar(
+  $scroll: primary,
+  $panel: light-gray
+  ) {
+
   &::-webkit-scrollbar-thumb {
     background: color($scroll);
     border-radius: px-to-rem(10);
@@ -270,14 +293,22 @@
   }
 }
 
-@mixin placeholder($color: default, $font-size: 16, $font-weight: regular) {
+@mixin placeholder(
+  $color: default,
+  $font-size: 16,
+  $font-weight: regular
+  ) {
+
   ::-webkit-input-placeholder { color: color($color); font-size: px-to-em($font-size); font-weight: weight($font-weight); }
   ::-moz-placeholder          { color: color($color); font-size: px-to-em($font-size); font-weight: weight($font-weight); }
   :-moz-placeholder           { color: color($color); font-size: px-to-em($font-size); font-weight: weight($font-weight); }
   :-ms-input-placeholder      { color: color($color); font-size: px-to-em($font-size); font-weight: weight($font-weight); }
 }
 
-@mixin placeholder-remove($color: transparent) {
+@mixin placeholder-remove(
+  $color: transparent
+  ) {
+
   input:focus::-webkit-input-placeholder { color: $color; }
   input:focus::-moz-placeholder          { color: $color; }
   input:focus:-moz-placeholder           { color: $color; }
