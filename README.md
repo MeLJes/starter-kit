@@ -114,25 +114,15 @@ Add clearfix for floating elements.
 
 ### SCSS functions
 
-**`px-to-rem() | px-to-em()`**
+**`px-to-rem() | px-to-em()`** — convert PX to EM or REM.
 
-Convert PX to EM or REM.
+**`color()`** — pick color from palette.
 
-**`color()`**
+**`weight()`** — set `font-weight` property.
 
-Pick color from palette.
+**`z()`** — set `z-index` property.
 
-**`weight()`**
-
-Set `font-weight` property.
-
-**`z()`**
-
-Set `z-index` property.
-
-**`breakpoint()`**
-
-Set `breakpoint` name from the list below as an argument. Number value will converted to rem.
+**`breakpoint()`** — set `breakpoint` name from the list below as an argument. Number value will converted to rem.
 
 > `@media screen and (min-width: breakpoint(point)) { code }`
 
