@@ -30,85 +30,45 @@ Compiles SCSS to CSS for production to the `css` folder. Styles are autoprefixed
 
 ### SCSS mixins
 
-**`@include font(size, weight, gradient);`**
+**`@include font(size, weight, gradient);`** — set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support.
 
-Set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support.
+**`include flex(display, justify-content, align-items, direction, wrap);`** — set element flex properties.
 
-**`include flex(display, justify-content, align-items, direction, wrap);`**
+**`@include touch(property);`** — set pointer-events and user-select CSS properties.
 
-Set element flex properties.
+**`@include position(index, position, top, right, bottom, left, unit);`** — set element z-index and position.
 
-**`@include touch(property);`**
+**`@include padding(top, right, bottom, left, unit);`** — set element paddings.
 
-Set pointer-events and user-select CSS properties.
+**`@include centering-flex;`** — centering element with flex properties.
 
-**`@include position(index, position, top, right, bottom, left, unit);`**
+**`@include centering-position(index);`** — centering element with position and transform properties.
 
-Set element z-index and position.
+**`@include tr(property, duration, timing-function);`** — transitions.
 
-**`@include padding(top, right, bottom, left, unit);`**
+**`@include width(width, unit, max-width, unit);`** — set element width and max-width.
 
-Set element paddings.
+**`@include square(width, unit);`** — set equal width & height.
 
-**`@include centering-flex;`**
+**`@include square-max(width, max-width, unit);`** — set equal width, height, max-width & max-height.
 
-Centering element with flex properties.
+**`@include ratio-sn-land(width, unit);`** — set 16:9 ratio (Landscape).
 
-**`@include centering-position(index);`**
+**`@include ratio-sn-port(width, unit);`** — set 16:9 ratio (Portrait).
 
-Centering element with position and transform properties.
+**`@include ratio-a4-land(width, unit);`** — set 99:70 ratio (A4, Landscape).
 
-**`@include tr(property, duration, timing-function);`**
+**`@include ratio-a4-port(width, unit);`** — set 99:70 ratio (A4, Portrait).
 
-Transitions.
+**`@include scrollbar(scroll, panel);`** — change scroll bar colors.
 
-**`@include width(width, unit, max-width, unit);`**
+**`@include placeholder(color, size, weight);`** — change input placeholder style.
 
-Set element width and max-width.
+**`@include placeholder-remove(color);`** — remove placeholder on click.
 
-**`@include square(width, unit);`**
+**`@include input-autofill;`** — change autofill color.
 
-Set equal width & height.
-
-**`@include square-max(width, max-width, unit);`**
-
-Set equal width, height, max-width & max-height.
-
-**`@include ratio-sn-land(width, unit);`**
-
-Set 16:9 ratio (Landscape).
-
-**`@include ratio-sn-port(width, unit);`**
-
-Set 16:9 ratio (Portrait).
-
-**`@include ratio-a4-land(width, unit);`**
-
-Set 99:70 ratio (A4, Landscape).
-
-**`@include ratio-a4-port(width, unit);`**
-
-Set 99:70 ratio (A4, Portrait).
-
-**`@include scrollbar(scroll, panel);`**
-
-Change scroll bar colors.
-
-**`@include placeholder(color, size, weight);`**
-
-Change input placeholder style.
-
-**`@include placeholder-remove(color);`**
-
-Remove placeholder on click.
-
-**`@include input-autofill;`**
-
-Change autofill color.
-
-**`@include clearfix;`**
-
-Add clearfix for floating elements.
+**`@include clearfix;`** — add clearfix for floating elements.
 
 ---
 
