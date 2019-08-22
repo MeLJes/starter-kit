@@ -1,3 +1,13 @@
+/* Functions
+ *
+ * px-to-rem() | px-to-em()   — convert PX to EM or REM
+ * color()                    — pick color from palette
+ * weight()                   — set font-weight property
+ * z()                        — set z-index property
+ * breakpoint()               — set breakpoint name from the list below as an argument. Number value will converted to REM
+ *
+ */
+
 @function px-to-em($pixels, $context: $default-size) {
   @return #{$pixels / $context}em;
 }
