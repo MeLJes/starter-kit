@@ -82,7 +82,7 @@ Compiles SCSS to CSS for production to the `css` folder. Styles are autoprefixed
 
 **`z()`** — set `z-index` property.
 
-**`breakpoint()`** — set `breakpoint` name from the list below as an argument. Number value will converted to rem.
+**`breakpoint()`** — set `breakpoint` name from the list below as an argument. Number value will converted to REM.
 
 > `@media screen and (min-width: breakpoint(point)) { code }`
 
