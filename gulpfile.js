@@ -10,14 +10,34 @@ const paths = {
   scripts: {
     src: './js/**/*.js',
     dest: 'js/'
+  },
+  html: {
+    src: './*.html',
+    dest: './'
   }
 };
 
 // --- Default
 function style() {
   return gulp.src(paths.styles.src)
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
 }
+
+// --- Watch
+function watch() {
+  browserSync.init({
+    server: {
+      baseDir: './'
+    }
+  })
+
+  gulp.watch(paths.styles.src, style);
+  gulp.watch(paths.html.src).on('change', browserSync.reload);
+  gulp.watch(paths.scripts.src).on('change', browserSync.reload);
+}
+
+// --- Run
 exports.style = style;
+exports.watch = watch;
