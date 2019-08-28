@@ -19,7 +19,7 @@ const paths = {
 
 // --- Default
 function style() {
-  return gulp.src(paths.styles.src)
+  return gulp.src(paths.styles.src, {sourcemaps: true})
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
@@ -38,6 +38,6 @@ function watch() {
   gulp.watch(paths.scripts.src).on('change', browserSync.reload);
 }
 
-// --- Run
+// --- Runs
 exports.style = style;
 exports.watch = watch;
