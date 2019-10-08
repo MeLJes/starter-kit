@@ -18,13 +18,13 @@ Change the `ROOT` constant in `gulpfile.js` to path where you want to keep your 
 
 ## How to use it
 
-**`npm start`**
+**`gulp`**
 
-Runs the app in development mode. CSS files include source-maps which help to debug SCSS in browser.
+Runs the app in development mode. CSS files include source-maps which help to debug SCSS in browser. BrowserSync on.
 
-**`npm run build`**
+**`gulp build`**
 
-Compiles SCSS to CSS for production to the `css` folder. Styles are autoprefixed.
+Compiles SCSS to CSS for production to the `css` folder. Styles are autoprefixed. Concat and minify all JS files.
 
 ---
 
