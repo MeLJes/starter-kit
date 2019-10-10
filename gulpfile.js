@@ -68,9 +68,7 @@ function buildJS() {
 const build = gulp.series(clean, gulp.parallel(buildCSS, buildJS));
 
 // --- Tasks
+exports.default = watch;
 exports.style = style;
 exports.watch = watch;
 exports.build = build;
-
-// --- Default
-exports.default = watch;

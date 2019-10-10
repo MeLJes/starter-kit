@@ -14,8 +14,6 @@ Run it in terminal in the root folder
 npm install
 ```
 
-Change the `ROOT` constant in `gulpfile.js` to path where you want to keep your `.scss` and `.css` files. Default is `./`
-
 ## How to use it
 
 **`gulp`**
