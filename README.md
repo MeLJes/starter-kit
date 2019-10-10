@@ -30,7 +30,7 @@ Compiles SCSS to CSS for production to the `css` folder. Styles are autoprefixed
 
 **`@include font(size, weight, gradient);`** — set font size & weight. Pass third parameter as 'gradient' to add CSS rules for gradient support.
 
-**`include flex(display, justify-content, align-items, direction, wrap);`** — set element flex properties.
+**`@include flex(display, justify-content, align-items, direction, wrap);`** — set element flex properties.
 
 **`@include touch(property);`** — set pointer-events and user-select CSS properties.
 
