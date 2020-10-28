@@ -1,8 +1,15 @@
-// --- Font families
-$font-default: 'Arial', sans-serif;
-$font-secondary: 'Times New Roman', serif;
+// --- Global variables
+:root {
+  --font-default: 'Arial', sans-serif;
+  --font-secondary: 'Times New Roman', serif;
+}
 
-// --- Font weights
+// --- Default values
+$default-size: 16;
+$default-radius: 5;
+$shadow: 1px 1px 20px -6px rgba(var(--default),0.45);
+
+// --- Functions arguments (Font weights, Colors, Z-index, Breakpoints)
 $weights: (
   light: 300,
   regular: normal,
@@ -12,40 +19,31 @@ $weights: (
   extra-bold: 800,
   black: 900
 );
-
-// --- Colors
 $colors: (
   // --- Main
-  default: var(--default),
-  primary: var(--primary),
-  secondary: var(--secondary),
+  default: var(--color-default),
+  primary: var(--color-primary),
+  secondary: var(--color-secondary),
 
   // --- Additional
-  white: var(--white),
-  black: var(--black),
-  gray: var(--gray),
-  light-gray: var(--light-gray),
-  dark-gray: var(--dark-gray),
+  white: var(--color-white),
+  black: var(--color-black),
+  gray: var(--color-gray),
+  light-gray: var(--color-light-gray),
+  dark-gray: var(--color-dark-gray),
 
   // --- Alerts
-  success: var(--success),
-  warning: var(--warning),
-  error: var(--error)
+  success: var(--color-success),
+  warning: var(--color-warning),
+  error: var(--color-error)
 );
-
-// --- Z-index
 $z-layers: (
-  // --- Main
   back: -1,
   base: 0,
   default: 1,
-
-  // --- Additional
   overlay: 999,
   extended: 9999
 );
-
-// --- Breakpoints
 $breakpoints: (
   zero: 0,
   zero-max: 478,
@@ -61,12 +59,3 @@ $breakpoints: (
   extra-large-max: 1999,
   huge: 2000
 );
-
-// --- Container
-$container-max: 1200;
-$container-padding: 30;
-
-// --- Default values
-$default-size: 16;
-$default-radius: 5;
-$shadow: 1px 1px 20px -6px rgba(var(--default),0.45);

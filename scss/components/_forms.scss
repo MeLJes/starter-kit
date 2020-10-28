@@ -1,3 +1,5 @@
+@use './helpers' as helpers;
+
 // --- Replace default checkbox and radio buttons icon
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked,
@@ -24,9 +26,9 @@
 [type="radio"]:checked + label::before,
 [type="radio"]:not(:checked) + label::after,
 [type="radio"]:checked + label::after {
-  @include square(20, px);
-  @include position(base, absolute, auto, auto, auto, 0);
-  @include tr(all, 0.075);
+  @include helpers.square(20, px);
+  @include helpers.position(base, absolute, auto, auto, auto, 0);
+  @include helpers.tr(all, 0.075);
 
   transform: translateY(-50%);
 
@@ -51,13 +53,13 @@
 [type="checkbox"]:not(:checked) + label::after,
 [type="checkbox"]:checked + label::after {
   content: '';
-  background: url('../icons/checkbox-active.svg') no-repeat center center;
+  background: url('../icons/checkbox-checked.svg') no-repeat center center;
   background-size: contain;
 }
 [type="radio"]:not(:checked) + label::after,
 [type="radio"]:checked + label::after {
   content: '';
-  background: url('../icons/radio-active.svg') no-repeat center center;
+  background: url('../icons/radio-checked.svg') no-repeat center center;
   background-size: contain;
 }
 

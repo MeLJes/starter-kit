@@ -1,15 +1,17 @@
+@use './helpers' as helpers;
+
 // --- Sections
 .main-content {
-  @include flex(flex, flex-start, flex-start, column);
-  @include tr;
+  @include helpers.flex(flex, flex-start, flex-start, column);
+  @include helpers.tr;
 
   height: 100%;
 }
 .container {
   width: 100%;
   height: inherit;
+  padding: 0 helpers.px-to-rem(30);
   margin: 0 auto;
-  padding: 0 px-to-rem($container-padding);
   position: relative;
 }
 
@@ -20,9 +22,8 @@
   width: 100%;
 }
 .button-holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include helpers.flex(flex, center, center, column);
+
   width: 100%;
 }
 .link-block {
