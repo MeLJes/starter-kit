@@ -1,3 +1,5 @@
+@use './helpers' as helpers;
+
 html,
 body {
   height: 100%;
@@ -13,8 +15,6 @@ html {
 body {
   color: color(default);
   position: relative;
-
-  @include flex(flex, flex-start, stretch, column);
 }
 *:not(img) {
   outline: none;
@@ -55,7 +55,7 @@ textarea {
   border: none;
   border-radius: 0;
 
-  @include tr;
+  @include helpers.tr;
 }
 input,
 textarea {
@@ -81,5 +81,5 @@ a:visited {
   color: inherit;
   text-decoration: none;
 
-  @include tr;
+  @include helpers.tr;
 }

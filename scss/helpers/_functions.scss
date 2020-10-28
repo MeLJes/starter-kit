@@ -8,17 +8,19 @@
  *
  */
 
-@function px-to-em($pixels, $context: $default-size) {
+@use 'variables' as vars;
+
+@function px-to-em($pixels, $context: vars.$default-size) {
   @return #{$pixels / $context}em;
 }
 
-@function px-to-rem($pixels, $context: $default-size) {
+@function px-to-rem($pixels, $context: vars.$default-size) {
   @return #{$pixels / $context}rem;
 }
 
 @function color($key) {
-  @if map-has-key($colors, $key) {
-    @return map-get($colors, $key);
+  @if map-has-key(vars.$colors, $key) {
+    @return map-get(vars.$colors, $key);
   }
 
   @warn "Unknown `#{$key}` in $colors.";
@@ -26,8 +28,8 @@
 }
 
 @function weight($weight) {
-  @if map-has-key($weights, $weight) {
-    @return map-get($weights, $weight);
+  @if map-has-key(vars.$weights, $weight) {
+    @return map-get(vars.$weights, $weight);
   }
 
   @warn "Unknown `#{$weight}` in $weights.";
@@ -35,8 +37,8 @@
 }
 
 @function z($key) {
-  @if map-has-key($z-layers, $key) {
-    @return map-get($z-layers, $key);
+  @if map-has-key(vars.$z-layers, $key) {
+    @return map-get(vars.$z-layers, $key);
   }
 
   @warn "Unknown `#{$key}` in $z-layers.";
@@ -44,8 +46,8 @@
 }
 
 @function breakpoint($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @return px-to-rem( map-get($breakpoints, $breakpoint) );
+  @if map-has-key(vars.$breakpoints, $breakpoint) {
+    @return px-to-rem( map-get(vars.$breakpoints, $breakpoint) );
   }
 
   @warn "Unknown `#{$breakpoint}` in $breakpoints.";

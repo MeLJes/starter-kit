@@ -1,7 +1,9 @@
+@use './helpers' as helpers;
+
 // --- Buttons
 a.button,
 button.button {
-  @include flex(flex, center, center);
+  @include helpers.flex(flex, center, center);
 
   background: color(primary);
 
@@ -13,7 +15,7 @@ button.button {
 
 // --- Back to top
 .back-to-top {
-  @include position(extended, fixed, auto, 30, 30);
+  @include helpers.position(extended, fixed, auto, 30, 30);
 
   height: px-to-em(45);
   width: px-to-em(45);

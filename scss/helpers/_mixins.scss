@@ -23,13 +23,16 @@
  *
  */
 
+@use 'variables' as vars;
+@use 'functions' as func;
+
 @mixin font(
   $font-size: 16,
   $font-weight: regular,
   $gradient: false
   ) {
 
-  font-size: px-to-rem($font-size);
+  font-size: func.px-to-rem($font-size);
   font-weight: weight($font-weight);
 
   @if $gradient == gradient {
@@ -68,14 +71,14 @@
   $unit: px
   ) {
 
-  z-index: z($index);
+  z-index: func.z($index);
   position: $position;
 
   @if $top == auto {
     top: auto;
   }  @else {
     @if $unit == px {
-      top: px-to-rem($top);
+      top: func.px-to-rem($top);
     } @else {
       top: #{$top}$unit;
     }
@@ -85,7 +88,7 @@
     right: auto;
   }  @else {
     @if $unit == px {
-      right: px-to-rem($right);
+      right: func.px-to-rem($right);
     } @else {
       right: #{$right}$unit;
     }
@@ -95,7 +98,7 @@
     bottom: auto;
   }  @else {
     @if $unit == px {
-      bottom: px-to-rem($bottom);
+      bottom: func.px-to-rem($bottom);
     } @else {
       bottom: #{$bottom}$unit;
     }
@@ -105,7 +108,7 @@
     left: auto;
   }  @else {
     @if $unit == px {
-      left: px-to-rem($left);
+      left: func.px-to-rem($left);
     } @else {
       left: #{$left}$unit;
     }
@@ -121,7 +124,7 @@
   ) {
 
   @if $unit == px {
-    padding: px-to-rem($top) px-to-rem($right) px-to-rem($bottom) px-to-rem($left);
+    padding: func.px-to-rem($top) func.px-to-rem($right) func.px-to-rem($bottom) func.px-to-rem($left);
   } @else {
     padding: #{$top}$unit #{$right}$unit #{$bottom}$unit #{$left}$unit;
   }
@@ -140,7 +143,7 @@
 
   transform: translate(-50%, -50%);
 
-  z-index: z($index);
+  z-index: func.z($index);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -165,7 +168,7 @@
   @if $unit == full {
     width: 100%;
   } @else if $unit == px {
-    width: px-to-rem($width);
+    width: func.px-to-rem($width);
   } @else {
     width: #{$width}$unit;
   }
@@ -176,7 +179,7 @@
     width-max: none;
   } @else {
     @if $unit-max == px {
-      width-max: px-to-rem($width-max);
+      width-max: func.px-to-rem($width-max);
     } @else {
       width-max: #{$width-max}$unit;
     }
@@ -190,8 +193,8 @@
   ) {
 
   @if $unit == px {
-    width: px-to-rem($width);
-    height: px-to-rem($height);
+    width: func.px-to-rem($width);
+    height: func.px-to-rem($height);
   } @else {
     width: #{$width}$unit;
     height: #{$height}$unit;
@@ -207,10 +210,10 @@
   ) {
 
   @if $unit == px {
-    width: px-to-rem($width);
-    max-width: px-to-rem($max-width);
-    height: px-to-rem($height);
-    max-height: px-to-rem($max-height);
+    width: func.px-to-rem($width);
+    max-width: func.px-to-rem($max-width);
+    height: func.px-to-rem($height);
+    max-height: func.px-to-rem($max-height);
   } @else {
     width: #{$width}$unit;
     max-width: #{$max-width}$unit;
@@ -225,8 +228,8 @@
   ) {
 
   @if $unit == px {
-    width: px-to-rem($width);
-    height: px-to-rem($width / 1.77777777778);
+    width: func.px-to-rem($width);
+    height: func.px-to-rem($width / 1.77777777778);
   } @else {
     width: #{$width}$unit;
     height: #{($width / 1.77777777778)}$unit;
@@ -239,8 +242,8 @@
   ) {
 
   @if $unit == px {
-    width: px-to-rem($width);
-    height: px-to-rem($width * 1.77777777778);
+    width: func.px-to-rem($width);
+    height: func.px-to-rem($width * 1.77777777778);
   } @else {
     width: #{$width}$unit;
     height: #{($width * 1.77777777778)}$unit;
@@ -253,8 +256,8 @@
   ) {
 
   @if $unit == px {
-    width: px-to-rem($width);
-    height: px-to-rem($width / 1.41428571429);
+    width: func.px-to-rem($width);
+    height: func.px-to-rem($width / 1.41428571429);
   } @else {
     width: #{$width}$unit;
     height: #{($width / 1.41428571429)}$unit;
@@ -267,8 +270,8 @@
   ) {
 
   @if $unit == px {
-    width: px-to-rem($width);
-    height: px-to-rem($width * 1.41428571429);
+    width: func.px-to-rem($width);
+    height: func.px-to-rem($width * 1.41428571429);
   } @else {
     width: #{$width}$unit;
     height: #{($width * 1.41428571429)}$unit;
@@ -282,14 +285,14 @@
 
   &::-webkit-scrollbar-thumb {
     background: color($scroll);
-    border-radius: px-to-rem(10);
-    width: px-to-rem(10);
-    height: px-to-rem(10);
+    border-radius: func.px-to-rem(10);
+    width: func.px-to-rem(10);
+    height: func.px-to-rem(10);
   }
   &::-webkit-scrollbar {
     background: color($panel);
-    width: px-to-rem(3);
-    height: px-to-rem(3);
+    width: func.px-to-rem(3);
+    height: func.px-to-rem(3);
   }
 }
 

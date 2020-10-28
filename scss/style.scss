@@ -1,36 +1,6 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
-// --- Helpers
-@import "helpers/variables";
-@import "helpers/functions";
-@import "helpers/mixins";
-// @import "helpers/libs/mq";
-
-// --- Base styles
-@import "base/normalize";
-@import "base/typography";
-@import "base/tags";
-@import "base/base";
-
-// --- Components
-@import "components/loader";
-@import "components/buttons";
-@import "components/forms";
-
-// ------ WP
-// @import "components/wp/forms";
-// @import "components/wp/cf7";
-
-// --- Layouts
-@import "layouts/header";
-@import "layouts/footer";
-
-// ------------------
-
-// --- Home page
-@import "sections/home/home";
-
-// ------------------
-
-// ------ Custom
-@import "sections/custom"
+@use './base' as base;
+@use './components' as components;
+@use "./layouts" as layouts;
+@use "./pages" as pages;

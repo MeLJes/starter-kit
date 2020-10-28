@@ -1,34 +1,36 @@
-.header {
-  padding: px-to-rem(50) 0;
+@use './helpers' as helpers;
 
-  @include position(overlay, fixed, 0, 0, auto, 0);
-  @include tr;
+.header {
+  padding: helpers.px-to-rem(50) 0;
+
+  @include helpers.position(overlay, fixed, 0, 0, auto, 0);
+  @include helpers.tr;
 
   .container {
-    @include flex (flex, space-between, center);
+    @include helpers.flex(flex, space-between, center);
   }
   .logo {
     img {
-      max-width: px-to-rem(70);
+      max-width: helpers.px-to-rem(70);
     }
   }
 
   // --- Menu
   .menu-panel {
-    @include tr;
+    @include helpers.tr;
   }
 
   // --- Scroll
   &.on-scroll {
-    background: color(white);
-    box-shadow: $shadow;
-    padding: px-to-rem(30) 0;
+    background: helpers.color(white);
+    box-shadow: helpers.$shadow;
+    padding: helpers.px-to-rem(30) 0;
   }
 }
 
 // --- Mobile device
 body.it-is-mobile {
   .header {
-    padding: px-to-rem(25) 0;
+    padding: helpers.px-to-rem(25) 0;
   }
 }
