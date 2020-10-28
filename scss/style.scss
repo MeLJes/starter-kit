@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-@use './base' as base;
-@use './components' as components;
-@use "./layouts" as layouts;
-@use "./pages" as pages;
+@use './base';
+@use './components';
+@use './layouts';
+@use './pages';

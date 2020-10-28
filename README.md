@@ -11,7 +11,7 @@
 Run it in terminal in the root folder
 
 ```bash
-yarn (or npm install)
+yarn
 ```
 
 ## How to use it
